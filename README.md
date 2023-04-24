@@ -5,6 +5,9 @@
 **Base de datos**
 **Lenguaje de programacion**
 -Python3 (Version ????)
+-PHPMyAdmin (Version ????)
+-FLASK (Version 2.2)
+
 
 ## Descripcion
 En este branch esta cargada toda la logica interna del backend, siguiendo el modelo MVC (Model View Controller), el modelo de los datos y el controlador para enviarlos al view como partes principales de este.
