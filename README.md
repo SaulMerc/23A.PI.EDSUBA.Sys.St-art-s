@@ -4,7 +4,7 @@
 ## Tecnologias utilizadas
 **Base de datos**
 **Lenguaje de programacion**
--Python3 (Version ????)
+-Python3 (Version ????) \n
 -PHPMyAdmin (Version ????)
 -FLASK (Version 2.2)
 
