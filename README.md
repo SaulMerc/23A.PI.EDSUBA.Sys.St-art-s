@@ -3,7 +3,9 @@
 
 ## Tecnologias utilizadas
 **Base de datos**
+
 **Lenguaje de programacion**
+
 -Python3 (Version ????) </br>
 
 -PHPMyAdmin (Version ????) </br>
@@ -16,6 +18,7 @@ En este branch esta cargada toda la logica interna del backend, siguiendo el mod
 
 ##Dependencias
 instalar conector de python y mysql --> pip install mysql-connector-python
+
 instalar flask --> pip install flask
 
 
