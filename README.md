@@ -6,11 +6,11 @@
 
 **Lenguaje de programacion**
 
--Python3 (Version ????) </br>
+**-Python3** (Version ????) </br>
 
--PHPMyAdmin (Version ????) </br>
+**-PHPMyAdmin**(Version ????) </br>
 
--FLASK (Version 2.2) </br>
+**-FLASK**(Version 2.2) </br>
 
 
 ## Descripcion
