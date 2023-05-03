@@ -1,0 +1,8 @@
+form.signIN{
+    width: 1000px;
+    height: 600px;
+    background: yellow;
+    padding: 50px;
+    display: inline-flex;
+    flex-direction: column;
+}

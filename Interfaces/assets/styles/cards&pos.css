@@ -1,0 +1,113 @@
+@import url(fonts&col.css);
+
+.container {
+    display: inline-flex;
+    flex-flow: row wrap;
+    max-width: 120rem;
+    margin-inline: 20px;
+    justify-content: center;
+    padding-inline: 1.5rem;
+    height: 100%;
+}
+.card__Large {
+    max-width: 500px;
+    max-height: 550px;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 20px;
+    word-break: break-all;
+    text-align: center;
+}
+
+.img__card {
+    display: flex;
+    border: solid 4px white;
+    border-radius: 4px;
+}
+
+.card__Large:hover{
+    cursor: pointer;
+    transition: 0.3s ease all;
+    box-shadow: 5px 5px 5px rgba(136, 135, 135, 0.603);
+}
+/*Carrusel*/
+.carrusel {
+    width: 100%;
+    max-width: 800px;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+
+}
+
+.container__elementocarrusel {
+    width: 100%;
+    max-width: 800px;
+    height: 350px;
+    position: absolute;
+    transition: all 0.5s;
+}
+
+.container__elementocarrusel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Display y Grids */
+.displ__flx {
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 0;
+}
+.displ__flxmod{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0;
+}
+/* Grid para tajetas */
+.grid__shop {
+    display: grid;
+    grid-template: 
+        "image image image image image" 150px
+        "image image image image image" auto
+        "art art art art art" 30px
+        "obName obName obName obName obName"30px
+        "cat cat cat cat cat"30px
+        "price price price price price"30px;
+}
+
+.grid__image {
+    grid-area: image;
+    margin: auto;
+    vertical-align: top;
+    
+}
+
+.grid__author {
+    grid-area: art;
+
+}
+
+.grid__obName {
+    grid-area: obName;
+
+}
+
+.grid__cat {
+    grid-area: cat;
+
+}
+
+.grid__price {
+    grid-area: price;
+
+}
+.grid__shop  p, h2, h3, h4{
+    font-size: 1.4rem;
+}

@@ -1,0 +1,23 @@
+.img40{
+    height: 2.5vh;
+}
+
+.img30{
+  width: 2.5vw;
+  height: 6.5vh;
+}
+
+.imgSi{
+  width: 25%;
+  height: 40%;
+}
+.imageCart{
+  content: url("../images/CartW.svg");
+}
+.imageLogo{
+  content: url("../images/stars\ alizado\ letras\ IN\ WHITE.png");
+}
+
+.imageLogoSi{
+  content: url("../icons/stars\ letras\ down.png");
+}

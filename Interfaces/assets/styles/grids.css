@@ -1,0 +1,225 @@
+/* Extructura general */
+* {
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  height: 100vh;
+  background: var(--fondo);
+}
+body {
+  min-height: 100vh;
+}
+
+/* Grid para la pagina del artista*/
+.gridArtist {
+  display: grid;
+  gap: 5px;
+  grid-template:
+    "head head head head" 60px
+    "aside main main main" auto
+    "aside main main main" auto
+    "aside foot foot foot" 100px;
+}
+
+/* Grid del header */
+.gridArtist > .gridH {
+  background: antiquewhite;
+  grid-area: head;
+}
+
+/* Grid del aside */
+.gridArtist > .gridA {
+  background: aquamarine;
+  grid-area: aside;
+}
+
+/* Grid del main */
+.gridArtist > .gridM {
+  background: bisque;
+  grid-area: main;
+}
+/* Grid del footer */
+.gridArtist > .gridF {
+  background: burlywood;
+  grid-area: foot;
+}
+
+/* Estructura de la página principal */
+.gridMain {
+  display: grid;
+  gap: 5px;
+  grid-template:
+    "header header header header" 60px
+    "main main main main" auto
+    "footer footer footer footer" 100px;
+}
+.gridMain > .gridH {
+  grid-area: header;
+}
+.gridMain > .gridM {
+  grid-area: main;
+}
+.gridMain > .gridF {
+  grid-area: footer;
+}
+
+/* Estructura de la página producto */
+.gridProd {
+  display: grid;
+  gap: 3px;
+  grid-template:
+    "header header header header" 60px
+    "main main main main" auto
+    "footer footer footer footer" 100px;
+}
+
+.gridProd > .gridH {
+  grid-area: header;
+  background: violet;
+}
+.gridProd > .gridM {
+  grid-area: main;
+  background: yellowgreen;
+}
+.gridProd > .gridF {
+  grid-area: footer;
+  background: tomato;
+}
+
+/* Estructura temporal de las demás paginas */
+.gridS {
+  display: grid;
+  gap: 3px;
+  grid-template:
+    "head head head head" 60px
+    "aside main main main" auto
+    "foot foot foot foot" 100px;
+}
+.gridS > .gridH {
+  grid-area: head;
+  background: yellow;
+}
+.gridS > .gridM {
+  grid-area: main;
+  background: wheat;
+}
+.gridS > .gridF {
+  grid-area: foot;
+  background: violet;
+}
+.gridS > .gridA {
+  grid-area: aside;
+  background: turquoise;
+}
+
+/* Grid para el carrito */
+.gridCart {
+  display: grid;
+  gap: 3px;
+  grid-template:
+    "head head head head" 60px
+    "main main main aside" auto
+    "foot foot foot foot" 100px;
+}
+.gridCart > .gridH {
+  grid-area: head;
+  background: yellow;
+}
+.gridCart > .gridM {
+  grid-area: main;
+  background: wheat;
+}
+.gridCart > .gridF {
+  grid-area: foot;
+  background: violet;
+}
+.gridCart > .gridA {
+  grid-area: aside;
+  background: turquoise;
+}
+
+/* Grid para el inicio de sesion */
+.gridForm {
+  display: grid;
+  gap: 3px;
+  grid-template:
+    ". .    .    .    ." 60px
+    ". . form . ." auto
+    ". . form . ." auto
+    ". .    .    .    ." 100px/auto auto 80vw auto auto;
+}
+.gridForm > .gridF {
+  grid-area: form;
+  background: var(--fondo);
+}
+
+/* Grid para Registro */
+.gridFormR {
+  display: grid;
+  gap: 3px;
+  grid-template:
+    ".    .    .   " 60px
+    "form form form" auto
+    "form form form" auto
+    ".    .    ." 60px;
+}
+.gridFormR > .gridF {
+  grid-area: form;
+  background: yellow;
+}
+
+/* Barra de navegación principal*/
+.navP {
+  display: grid;
+  grid-template: "menu logo search search login cart" /5% 10% 30% 25% 20% 10%;
+  min-height: 6vh;
+}
+.navP > .menu {
+  grid-area: menu;
+}
+
+.navP > .search {
+  grid-area: search;
+}
+
+.navP > .login {
+  grid-area: login;
+  text-align: center;
+}
+.navP > .cart {
+  grid-area: cart;
+  text-align: center;
+}
+
+.navP > .logo {
+  grid-area: logo;
+}
+
+/*Estilos del flex*/
+/*Alineacion al centro*/
+.flexC {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*Alineaciona a la derecha*/
+.flexR {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  text-align: right;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: center;
+}
+
+/*Alinacion a la izquierda*/
+.flexL {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
