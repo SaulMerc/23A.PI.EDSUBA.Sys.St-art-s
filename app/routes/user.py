@@ -2,7 +2,7 @@ from flask import Flask, Blueprint, jsonify, request, make_response
 from werkzeug.security import generate_password_hash, check_password_hash
 import database as db
 
-user = Blueprint('api', __name__,url_prefix='/api')
+user = Blueprint('user', __name__,url_prefix='/api')
 
 @user.get('/users/')
 def getUsers():
