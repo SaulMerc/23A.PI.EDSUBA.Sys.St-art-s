@@ -93,7 +93,7 @@ def addUser():
 
 # ////////////////////////////////////////////////
 
-@user.post("/useru/<id>")
+@user.put("/useru/<id>")
 def updateUser(id=str(id)):
     update_user = request.get_json()
     nombre = update_user['nombre']
