@@ -7,7 +7,7 @@ images = Blueprint('images', __name__,url_prefix='/api')
 @images.route('/upload/', methods=['POST'])
 def upload_file():
     uploaded_file = request.files['file']
-    file_path = 'C:\\Users\\waldi\\Desktop\\Loco\\' + uploaded_file.filename
+    file_path = '/home/waldo/fotos-perfil/' + uploaded_file.filename
     uploaded_file.save(file_path)
     
     
@@ -32,7 +32,7 @@ def upload_file():
 #     <title>Subir archivo</title>
 # </head>
 # <body>
-#     <form method="post" action="localhost:5000/upload/" enctype="multipart/form-data">
+#     <form method="post" action="http://localhost:3000/upload/" enctype="multipart/form-data">
 #         <input type="file" name="file">
 #         <button type="submit">Subir archivo</button>
 #     </form>
