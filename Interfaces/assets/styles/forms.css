@@ -6,3 +6,21 @@ form.signIN{
     display: inline-flex;
     flex-direction: column;
 }
+
+.form i{
+    color: crimson;
+}
+.form input, select{
+    width: 350px;
+    margin-bottom: 10px;
+    padding: 4px;
+}
+.form input#numInt, input#numExt, input#cdPos{
+    width: 80px;
+}
+.form select#col, select#mun{
+    width: 150px;
+}
+.form input[type=submit]{
+    margin-top: 10px;
+}

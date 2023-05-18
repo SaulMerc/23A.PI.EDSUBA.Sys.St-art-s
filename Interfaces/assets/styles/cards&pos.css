@@ -3,32 +3,75 @@
 .container {
     display: inline-flex;
     flex-flow: row wrap;
-    max-width: 120rem;
+    max-width: 100rem;
     margin-inline: 20px;
     justify-content: center;
     padding-inline: 1.5rem;
     height: 100%;
 }
+.cardDef {
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    transition: 0.3s ease all;
+}
 .card__Large {
     max-width: 500px;
     max-height: 550px;
     border-radius: 5px;
-    margin: 20px;
+    margin: 10px;
     padding: 20px;
+    background: var(--white);
+    color: var(--complement);
     word-break: break-all;
     text-align: center;
 }
 
+.card__Art {
+    max-width: 600px;
+    max-height: 345px;
+    padding: 10px;
+    margin: 10px 10px;
+    border-radius: 3px;
+    background:var(--white);
+    color: var(--complement);
+    word-break: break-all;
+    text-align: center;
+}
 .img__card {
     display: flex;
     border: solid 4px white;
     border-radius: 4px;
 }
-
+.img__cardP {
+    width: 30vw;
+    border: solid 4px white;
+    border-radius: 4px;
+}
+.img__cardG{
+    max-width: 20vw;
+    max-height: 25vh;
+    aspect-ratio: auto;
+}
 .card__Large:hover{
-    cursor: pointer;
     transition: 0.3s ease all;
     box-shadow: 5px 5px 5px rgba(136, 135, 135, 0.603);
+}
+
+.card__Art:hover{
+    transition: 0.3s ease all;
+    box-shadow: 5px 5px 5px rgba(136, 135, 135, 0.603);
+}
+
+.card__Art > h2:hover, h4:hover a:hover, div:hover a:hover{
+    cursor: pointer;
+    color: var(--primary);
+}
+
+.card__Art > {
+    cursor: pointer;
+    color: var(--primary);
 }
 /*Carrusel*/
 .carrusel {
@@ -55,59 +98,37 @@
     object-fit: cover;
 }
 
-/* Display y Grids */
-.displ__flx {
-    display: inline-flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-items: flex-start;
-    padding: 0;
-}
-.displ__flxmod{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 0;
-}
-/* Grid para tajetas */
-.grid__shop {
-    display: grid;
-    grid-template: 
-        "image image image image image" 150px
-        "image image image image image" auto
-        "art art art art art" 30px
-        "obName obName obName obName obName"30px
-        "cat cat cat cat cat"30px
-        "price price price price price"30px;
+.infoArt h2{
+    margin: 20px 20px 0px 0px;
 }
 
-.grid__image {
-    grid-area: image;
-    margin: auto;
-    vertical-align: top;
-    
+.art{
+    position: fixed;
+    width: 18vw;
 }
 
-.grid__author {
-    grid-area: art;
-
+/* SrollBars */
+.gridExpo > .gridDesc::-webkit-scrollbar{
+    -webkit-appearance: none;
+}
+.gridExpo > .gridDesc::-webkit-scrollbar:vertical {
+    width:10px;
 }
 
-.grid__obName {
-    grid-area: obName;
+.gridExpo > .gridDesc::-webkit-scrollbar-button:increment,.gridExpo > .gripP::-webkit-scrollbar-button {
+    display: none;
+} 
 
+.gridExpo > .gridDesc::-webkit-scrollbar:horizontal {
+    height: 15px;
 }
 
-.grid__cat {
-    grid-area: cat;
-
+.gridExpo > .gridDesc::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 10px;
+    border: 2px solid var(--secudary);
 }
 
-.grid__price {
-    grid-area: price;
-
-}
-.grid__shop  p, h2, h3, h4{
-    font-size: 1.4rem;
+.gridExpo > .gridDesc::-webkit-scrollbar-track {
+    border-radius: 5px;  
 }

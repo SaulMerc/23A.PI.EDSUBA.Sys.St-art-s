@@ -1,33 +1,3 @@
-// Define una función llamada setResponsiveImages
-function setResponsiveImages() {
-  // Busca todas las imágenes que tengan la clase "img-responsive" y guárdalas en la variable images
-  const images = document.querySelectorAll(".img-responsive");
-
-  // Recorre todas las imágenes encontradas con forEach()
-  images.forEach((image) => {
-    // Obtiene la lista de clases de la imagen actual
-    const classList = image.classList;
-
-    // Busca la clase que comience con "img-width-" y extrae el valor numérico
-    const widthClass = Array.from(classList).find((className) => {
-      return className.startsWith("img-width-");
-    });
-
-    // Si se encontró una clase que empieza con "img-width-"
-    if (widthClass) {
-      // Extrae el valor numérico de la clase y conviértelo a un número decimal
-      const widthValue = parseFloat(widthClass.replace("img-width-", "")) / 100;
-
-      // Asigna el ancho máximo correspondiente a la imagen
-      image.style.maxWidth = `${widthValue * 100}%`;
-
-      // Establece la altura de la imagen en "auto" para mantener la relación de aspecto original
-      image.style.height = "auto";
-    }
-  });
-}
-setResponsiveImages();
-
 // Obtener elementos del DOM
 const sidebar = document.querySelector('.sidebar');
 const toggleBtn = document.querySelector('.menu');
@@ -39,3 +9,42 @@ function toggleSidebar() {
 
 // Agregar evento de clic al botón de alternar
 toggleBtn.addEventListener('click', toggleSidebar);
+
+const darkModeToggle = document.querySelector('#dark__ModeToggle');
+
+darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark__Mode');
+});
+
+
+//mostrarD
+//Funcion del modal para la dirección
+const bModalD = document.querySelector(".closeD");
+const modalD = document.querySelector("#modalD");
+const bAddD = document.querySelector("#mostrarD");
+
+bModalD.addEventListener('click', showD);
+bAddD.addEventListener('click', hideD);
+
+function showD(){
+  modalD.classList.add("oculto");
+}
+function hideD(){
+  modalD.classList.remove("oculto");
+}
+
+//mostarP
+//Funcion del modal para agregar el método de pago
+const bModal = document.querySelector(".closeP");
+const modal = document.querySelector("#modalP");
+const bAddP = document.querySelector("#mostrarP");
+
+bModal.addEventListener('click', showP);
+bAddP.addEventListener('click', hideP);
+
+function showP(){
+  modal.classList.add("oculto");
+}
+function hideP(){
+  modal.classList.remove("oculto");
+}

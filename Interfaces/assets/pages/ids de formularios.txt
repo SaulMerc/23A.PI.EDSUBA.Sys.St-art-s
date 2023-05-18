@@ -1,0 +1,12 @@
+#ID's del formulario del domicilio#
+dir = Direccion(texto)
+numInt = Numero interior(numerico)
+numExt = Numero exterior(numerico)
+mun = Municipio(selector)
+col = Colonia(selector)
+cdPos = Codigo Postal(Numerico)
+
+#ID's de la tarjeta#
+nomTar = Nombre del propietarios de la tarjeta(texto)
+numTar = Numero de la tarjeta(numerico)
+fExp = Fechas de expiracion(date o calendario)

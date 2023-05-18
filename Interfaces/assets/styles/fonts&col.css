@@ -18,17 +18,9 @@
     src: url(../fonts/Louis\ George\ Cafe.ttf);
 }
 
-@media (min-width: 768px) {
-    .two__cols {
-        display: grid;
-        grid-template-columns: 60% 35%;
-        column-gap: 2rem;
-    }
-}
-
 :root {
     --primary: #93bfb7;
-    --secundary: #e4f2e7;
+    --secundary: rgb(228,242,231);
     --complement: #387373;
     --base: #2d3e40;
     --extra: #97a6a0;
@@ -37,10 +29,14 @@
     --white: #fff;
     --fondo: #E0E0E0;
 
+    --dkMode: #222222;
+
     --fsTitles: 16pt;
     --fsSt: 14pt;
     --fsTxt: 12pt;
 }
+
+
 
 /* Textos genéricos */
 /* Texto titulos */
@@ -67,6 +63,7 @@
 .txt__Ita {
     font-family: ita;
     margin-bottom: 5px;
+    font-size: 1em;
 }
 
 /* Colores y fondos */
@@ -133,16 +130,25 @@
 .bcBas {
     background: var(--base);
 }
+/* Fondo color extra */
+.bcWhite {
+    background: var(--white);
+}
+.bcFondo{
+    background: var(--fondo);
+}
 h1, h2, h3, h4, h5, h6{
     font-family: title;
     font-weight: lighter;
     font-size: calc(.6em + 1vw);
 }
-p, label, code, a, input, button, li, ul, ol{
+p, label, code, a, input, button, li, ul, ol, span{
     font-family: txt;
     font-weight: lighter;
-    font-size: calc(.2em + 1vw);
+    /* font-size: calc(.1rem + 1vw); */
+    font-size: 1em;
 }
 a{
     text-decoration: none;
+    color: var(--complement);
 }

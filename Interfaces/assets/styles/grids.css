@@ -1,51 +1,98 @@
+@import url(fonts&col.css);
 /* Extructura general */
-* {
-  margin: 0;
-  padding: 0;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-html {
-  height: 100vh;
-  background: var(--fondo);
-}
-body {
-  min-height: 100vh;
-}
+
 
 /* Grid para la pagina del artista*/
 .gridArtist {
   display: grid;
-  gap: 5px;
   grid-template:
     "head head head head" 60px
+    "aside main main main" auto 
     "aside main main main" auto
-    "aside main main main" auto
-    "aside foot foot foot" 100px;
+    "foot foot foot foot" 100px;
 }
 
 /* Grid del header */
 .gridArtist > .gridH {
-  background: antiquewhite;
   grid-area: head;
 }
 
 /* Grid del aside */
 .gridArtist > .gridA {
-  background: aquamarine;
+  max-width: 28vw;
+  word-break: break-all;
   grid-area: aside;
+  
 }
 
 /* Grid del main */
 .gridArtist > .gridM {
-  background: bisque;
+  width: 70vw;
   grid-area: main;
 }
 /* Grid del footer */
 .gridArtist > .gridF {
-  background: burlywood;
   grid-area: foot;
+}
+
+/*Grids para las obras de la pagina del artista*/
+.gridExpo{
+  display: grid;
+  grid-template:
+    "pic pic pic pic obr" 100px
+    "pic pic pic pic cat" 60px
+    "pic pic pic pic desc" 100px
+    "pic pic pic pic go" auto;
+}
+
+/* Grid de la imagen */
+.gridExpo > .gridP {
+  grid-area: pic;
+}
+/* Grid del nombre de la obra */
+.gridExpo > .gridO {
+  grid-area: obr;
+  overflow-y: auto;
+  padding: 5px;
+  
+}
+
+/* Grid para la categoria */
+.gridExpo > .gridCat {
+  grid-area: cat;
+  overflow-y: auto;
+  padding: 5px;
+}
+
+/* Grid del nombre de la obra */
+.gridExpo > .gridDesc {
+  grid-area: desc;
+  overflow-y: auto;
+  padding: 5px;
+}
+
+/* Grid del enlace a la obra */
+.gridExpo > .gridGo {
+  grid-area: go;
+  padding: 5px;
+}
+
+.gridPay{
+  display: grid;
+  grid-template: 
+  "datos datos select"auto
+  "datos datos     addP"60px;
+}
+
+.gridPay> .gridD{
+  grid-area: datos;
+}
+
+.gridPay> .gridS{
+  grid-area: select;
+}
+.gridPay> .gridA{
+  grid-area: addP;
 }
 
 /* Estructura de la página principal */
@@ -53,7 +100,7 @@ body {
   display: grid;
   gap: 5px;
   grid-template:
-    "header header header header" 60px
+    "header header header header" 56px
     "main main main main" auto
     "footer footer footer footer" 100px;
 }
@@ -64,26 +111,25 @@ body {
   grid-area: main;
 }
 .gridMain > .gridF {
+  
+  
   grid-area: footer;
 }
 
 /* Estructura de la página producto */
 .gridProd {
   display: grid;
-  gap: 3px;
   grid-template:
-    "header header header header" 60px
+    "header header header header" 56px
     "main main main main" auto
     "footer footer footer footer" 100px;
 }
 
 .gridProd > .gridH {
   grid-area: header;
-  background: violet;
 }
 .gridProd > .gridM {
   grid-area: main;
-  background: yellowgreen;
 }
 .gridProd > .gridF {
   grid-area: footer;
@@ -93,19 +139,18 @@ body {
 /* Estructura temporal de las demás paginas */
 .gridS {
   display: grid;
-  gap: 3px;
   grid-template:
-    "head head head head" 60px
-    "aside main main main" auto
-    "foot foot foot foot" 100px;
+    "head head head head" 56px
+    "main main main main" auto
+    "foot foot foot foot" 100px/15vw auto auto auto;
 }
 .gridS > .gridH {
   grid-area: head;
-  background: yellow;
+ 
 }
 .gridS > .gridM {
   grid-area: main;
-  background: wheat;
+
 }
 .gridS > .gridF {
   grid-area: foot;
@@ -121,17 +166,15 @@ body {
   display: grid;
   gap: 3px;
   grid-template:
-    "head head head head" 60px
+    "head head head head" 56px
     "main main main aside" auto
-    "foot foot foot foot" 100px;
+    "foot foot foot foot" 100px/auto auto auto 400px;
 }
 .gridCart > .gridH {
   grid-area: head;
-  background: yellow;
 }
 .gridCart > .gridM {
   grid-area: main;
-  background: wheat;
 }
 .gridCart > .gridF {
   grid-area: foot;
@@ -139,7 +182,7 @@ body {
 }
 .gridCart > .gridA {
   grid-area: aside;
-  background: turquoise;
+  
 }
 
 /* Grid para el inicio de sesion */
@@ -172,11 +215,149 @@ body {
   background: yellow;
 }
 
+/* Grid para tajetas */
+.grid__shop {
+  display: grid;
+  grid-template: 
+      "image image image image image" 150px
+      "image image image image image" auto
+      "art art art art art" 30px
+      "obName obName obName obName obName"30px
+      "cat cat cat cat cat"30px
+      "price price price price price"30px;
+}
+
+.grid__image {
+  grid-area: image;
+  margin: auto;
+  vertical-align: top;
+  
+}
+
+.grid__author {
+  grid-area: art;
+
+}
+
+.grid__obName {
+  grid-area: obName;
+
+}
+
+.grid__cat {
+  grid-area: cat;
+
+}
+
+.grid__price {
+  grid-area: price;
+
+}
+.grid__shop  p, h2, h3, h4{
+  font-size: 1.4rem;
+}
+
+/* Grid del producto */
+.gridSProd{
+  display: grid;
+  gap: 5px;
+  grid-template:
+  "cat     cat"40px
+  "titl    titl" 60px
+  "img     img"auto
+  "img     img"auto
+  "pri     avaliable" 60px
+  "desc    desc"auto
+  "dateM   ." 30px
+  "btc     btc"40px
+  "comtitl . "40px
+  "inscom  inscom "60px
+  "com     com"auto;
+}
+/* Grid de la categoria */
+.gridSProd > .gridCat{
+  grid-area: cat;
+} 
+/* Grid para la imagen del producto */
+.gridSProd >.gridImg {
+  grid-area: img;
+} 
+/* Grid para insertar el título */
+.gridSProd > .gridTitl{
+  grid-area: titl;
+}
+/* Grid para insertar la descripción */
+.gridSProd > .gridDesc{
+  grid-area: desc;
+} 
+/* Grid para poner el precio */
+.gridSProd > .gridPrice{
+  grid-area: pri;
+}
+/* Grid para la determianción de si está disponible o no */
+.gridSProd > .gridAvalia{
+  grid-area: avaliable;
+}
+/* Grid para el boton de agregar al carrito */
+.gridSProd > .gridBtc{
+  grid-area: btc;
+} 
+/* Grid para el comentario del título */
+.gridSProd > .gridComTitl{
+  grid-area: comtitl;
+}
+/* Grid del input para insertar comentarios */
+.gridSProd > .gridInsCom{
+  grid-area: inscom;
+} 
+/* Grid de los comentarios */
+.gridSProd > .gridCom{
+  grid-area: com;
+}
+/* Posicion de la fecha */
+.gridSProd > .gridDate{
+  grid-area: dateM;
+} 
+
+/* Grid de la lista de productos en el carrito*/
+.gridPCart{
+  display: grid;
+  gap: 3px;
+  grid-template:
+  "btnSelect img  name    price     . " 60px
+  "btnSelect img  nartist cantidad  ." 60px
+  "btnSelect img  desc    desc      btnDel" auto 
+  "sep       sep  sep     sep       sep"2px/ 5vw 15vw 25vw 10vw 5vw;
+}
+
+.gridPCart > .gridImg {
+  grid-area: img;
+}
+.gridPCart > .gridName {
+  grid-area: name;
+}
+.gridPCart > .gridPrice {
+  grid-area: price;
+}
+.gridPCart > .gridNart {
+  grid-area: nartist;
+}
+.gridPCart > .gridDesc {
+  grid-area: desc;
+}
+.gridPCart > .gridSelect {
+  grid-area: btnSelect;
+}
+.gridPCart > .gridDel {
+  grid-area: btnDel;
+}
+.gridPCart > .gridSep {
+  grid-area: sep;
+}
 /* Barra de navegación principal*/
 .navP {
   display: grid;
-  grid-template: "menu logo search search login cart" /5% 10% 30% 25% 20% 10%;
-  min-height: 6vh;
+  grid-template: "menu logo search search login cart" 56px;
 }
 .navP > .menu {
   grid-area: menu;
@@ -218,8 +399,51 @@ body {
 }
 
 /*Alinacion a la izquierda*/
+/* Flex alineado a la izquierda */
 .flexL {
   display: flex;
   justify-content: left;
   align-items: center;
+}
+/* Alinear contenido al centro del contenedor en la orilla */
+.flexCLB {
+  display: flex;
+  align-items: center;
+}
+/* Inline flex para diversas cards o contendores */
+.iFlex{
+  display: inline-flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/* Alinear contenido al centro del contenedor en la orilla */
+.flexCL {
+  display: flex;
+  align-items: center;
+}
+
+.flexE {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+/* Diferentes separaciones del contenedor */
+.padd5{
+  padding: 5px;
+}
+.padd10{
+  padding: 10px;
+}
+.padd15{
+ padding: 15px;
+}
+.padd20{
+  padding: 5px 0px 0px 20px;
+}
+.margR5{
+  margin-right: 5px;
+}
+.margB{
+  margin-bottom: 10px;
 }
