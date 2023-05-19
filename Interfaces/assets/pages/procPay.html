@@ -119,7 +119,7 @@
         <!-- Modal para la dirección -->
         <section class="alerta oculto cardDef bcFondo" id="modalD">
             <div class="contAlert">
-                <div><span class="closeD txt__Normal">X</span></div>
+                <div><span class="closeD txt__Normal"></span></div>
                 <h2 class="margB">Agregar dirección</h2>
                 <form action="POST" class="form iFLex">
                     
@@ -154,7 +154,7 @@
         <!-- Modal par la tarjeta -->
         <section class="cardDef bcFondo alerta oculto" id="modalP">
             <div class="contAlert">
-                <div><span class="closeP txt__Normal">X</span></div>
+                <div><span class="closeP txt__Normal"></span></div>
                 <h2 class="margB">Agregar método de pago</h2>
                 <form action="POST" class="form">
                     <label for="NombreTarj">Nombre de la tarjeta<i>*</i></label><br>
@@ -170,8 +170,10 @@
                 </form>
             </div>
         </section>
+        <!-- Queda pendiente el procesar el pago -->
     </main>
     <footer class="gridF"></footer>
+    <script src="../scripts/procPay.js"></script>
     <script src="../scripts/script.js"></script>
 </body>
 

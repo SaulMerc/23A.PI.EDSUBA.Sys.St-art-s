@@ -45,27 +45,37 @@
 /*Medias para la pagina del artista*/
 /*Telefonos*/
 @media only screen and (max-width: 620px) {
-   /*Grid acomodado para moviles*/
-   .gridArtist {
+/*Grid acomodado para moviles*/
+  .gridArtist {
     display: grid;
     gap: 1px;
     grid-template:
-      "head" 56px
+      "head" 60px
       "aside" auto
       "main" auto
       "foot" 100px;
   }
-  /* Grid del aside */
+    /* Grid del aside */
 .gridArtist > .gridA {
-  width: 100%;
+  min-width: 100%;
+  padding: 10px;
+  overflow:visible;
   grid-area: aside;
-  
+}
+.gridArtist > .gridM {
+  min-width: 100%;
+  padding: 10px;
+  grid-area: main;
 }
 
-/* Grid del main */
-.gridArtist > .gridM {
-  width: 100%;
-  grid-area: main;
+.gridCart {
+  display: grid;
+  gap: 3px;
+  grid-template:
+    "head" 56px
+    "main" auto
+    "aside" auto
+    "foot" 100px;
 }
 
 .gridExpo{
@@ -107,7 +117,15 @@
   padding: 10px;
   grid-area: main;
 }
-
+.gridCart {
+  display: grid;
+  gap: 3px;
+  grid-template:
+    "head" 56px
+    "main" auto
+    "aside" auto
+    "foot" 100px;
+}
 
 }
 
@@ -123,11 +141,19 @@
       "aside main main main" auto
       "aside foot foot foot" 100px;
   }
+  
 }
 
 /* Media para monitores */
 @media only screen and (min-width: 1200px) {
-  
+  .gridCart {
+    display: grid;
+    gap: 3px;
+    grid-template:
+      "head head head head" 56px
+      "main main main aside" auto
+      "foot foot foot foot" 100px/auto auto auto 400px;
+  }
 }
 
 

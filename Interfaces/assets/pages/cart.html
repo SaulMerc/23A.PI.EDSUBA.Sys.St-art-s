@@ -54,12 +54,12 @@
         <div class="cardDef bcWhite">
             <h2>Subtotal(n productos): <span>$$$</span></h2>
             <br>
-            <input type="button" value="Proceder al pago" class="padd5">
+            <input type="button" value="Proceder al pago" class="padd5" id="pPay">
         </div>
     </aside>
     <main class="gridM">
         <div class="cardDef bcWhite ">
-            <ol class="iFlex">
+            <ul class="iFlex" id="lista">
                 <li class="gridPCart">
                     <div class="flexC gridImg padd5">
                         <img src=" ../images/Minimalism Landscape.png" alt="" class="imgProduct">
@@ -72,7 +72,7 @@
                         <input type="checkbox"  value="selected">
                     </div>
                     <div class="gridDel flexE padd5">
-                        <input type="button" value="Eliminar" class="btnCom">
+                        <input type="button" value="Eliminar" class="btnCom" id="del">
                     </div>
                     <div class="gridSep bcCom"></div>
                 </li>
@@ -88,17 +88,34 @@
                         <input type="checkbox"  value="selected">
                     </div>
                     <div class="gridDel flexE padd5">
-                        <input type="button" value="Eliminar" class="btnCom">
+                        <input type="button" value="Eliminar" class="btnCom" id="del">
                     </div>
                     <div class="gridSep bcCom"></div>
                 </li>
-            </ol>
+                <li class="gridPCart">
+                    <div class="flexC gridImg padd5">
+                        <img src="../images/Landscapes Horizontal.jpg" alt="" class="imgProduct">
+                    </div>
+                    <h3 class="gridName flexCL padd5">Nombre de La obra</h3>
+                    <p class="gridPrice flexCL padd5">$$$</p>
+                    <h3 class="gridNart flexCL padd5">Nombre del artista</h3>
+                    <p class="gridDesc padd5">Descripcion</p>
+                    <div class="gridSelect padd10 flexC">
+                        <input type="checkbox"  value="selected">
+                    </div>
+                    <div class="gridDel flexE padd5">
+                        <input type="button" value="Eliminar" class="btnCom" id="del">
+                    </div>
+                    <div class="gridSep bcCom"></div>
+                </li>
+            </ul>
         </div>
     </main>
     <footer class="gridF">
         Footer
     </footer>
     <script src="../scripts/script.js"></script>
+    <script src="../scripts/cart.js"></script>
 </body>
 
 </html>

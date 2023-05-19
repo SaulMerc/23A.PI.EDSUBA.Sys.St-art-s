@@ -262,17 +262,14 @@
   display: grid;
   gap: 5px;
   grid-template:
-  "cat     cat"40px
-  "titl    titl" 60px
-  "img     img"auto
-  "img     img"auto
-  "pri     avaliable" 60px
-  "desc    desc"auto
-  "dateM   ." 30px
-  "btc     btc"40px
-  "comtitl . "40px
-  "inscom  inscom "60px
-  "com     com"auto;
+  "cat     cat .       ."40px
+  "img     img titl    titl"60px
+  "img     img desc    desc"auto
+  "img     img pri     avaliable"40px
+  "img     img btc     btc"
+  "comtitl comtitl .   . "40px
+  "inscom  inscom  inscom   ."60px
+  "com     com com     com"auto;
 }
 /* Grid de la categoria */
 .gridSProd > .gridCat{
@@ -314,10 +311,6 @@
 .gridSProd > .gridCom{
   grid-area: com;
 }
-/* Posicion de la fecha */
-.gridSProd > .gridDate{
-  grid-area: dateM;
-} 
 
 /* Grid de la lista de productos en el carrito*/
 .gridPCart{

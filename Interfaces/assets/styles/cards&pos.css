@@ -45,6 +45,7 @@
     border-radius: 4px;
 }
 .img__cardP {
+    aspect-ratio: auto;
     width: 30vw;
     border: solid 4px white;
     border-radius: 4px;
@@ -131,4 +132,35 @@
 
 .gridExpo > .gridDesc::-webkit-scrollbar-track {
     border-radius: 5px;  
+}
+
+.alert{
+    max-width: 50%;
+    width: 40%;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 5px;
+    color: var(--white);
+}
+.alert:hover{
+    cursor: pointer;
+    background: var(--complement);
+    
+}
+
+.close{
+    display: absolute;
+    float: right;
+    padding: 7px;
+    margin-left: 20px;
+    border: 1px solid var(--complement);
+    background: red;
+    border-radius: 50%;
+}
+.close:hover{
+    cursor: pointer;
+    background: red;
+    color: white;
+    font-weight: 100;
+    border: 1px solid var(--white);
 }

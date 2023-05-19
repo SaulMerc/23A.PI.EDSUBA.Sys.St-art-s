@@ -22,14 +22,15 @@
 .closeD, .closeP{
     display: absolute;
     float: right;
-    padding: 5px;
-    border: 1px solid var(--black);
+    padding: 7px;
+    border: 1px solid var(--complement);
+    background: red;
     border-radius: 50%;
 }
 .closeD:hover, .closeP:hover{
     cursor: pointer;
     background: red;
-    color: white;
+    color: var(--white);
     font-weight: 100;
     border: 1px solid var(--white);
 }

@@ -4,16 +4,19 @@
   width: 10.5vw;
   height: 3.5vh;
   content: url("../icons/CartW.svg");
+  aspect-ratio: auto;
 }
 /* Imagen del inicio de sesion  logo*/
 .imageLogoSi{
   content: url("../icons/stars\ letras\ down.png");
+  aspect-ratio: auto;
   width: 25%;
   height: 40%;
 }
 /* Imagen del menu */
 .imgM{
   content: url("../icons/MenuW.svg");
+  aspect-ratio: auto;
   width: 4.5vw;
   height: 2.5vh;
 }
@@ -28,10 +31,12 @@
 
 .imgArtist:hover{
   transform: scale(1.1);
+  aspect-ratio: auto;
 }
 
 /*Imagen del producto*/
 .imgProduct{
   width: 12vw;
   border: 1px solid var(--base);
+  aspect-ratio: auto;
 }

@@ -10,3 +10,6 @@ cdPos = Codigo Postal(Numerico)
 nomTar = Nombre del propietarios de la tarjeta(texto)
 numTar = Numero de la tarjeta(numerico)
 fExp = Fechas de expiracion(date o calendario)
+
+#ID's para el pago
+pPay= Redirección al pago
