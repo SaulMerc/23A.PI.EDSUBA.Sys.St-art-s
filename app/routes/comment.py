@@ -69,10 +69,10 @@ def deleteComment(id):
     return "El comentario se ha eliminado correctamente"
 
 
-
 @comment.put('/editComment/<string:id>')
 def editProd(id):
-    comentario = request.form['comentario']
+    update_comment = request.get_json()
+    comentario = update_comment['comentario']
   
     if comentario:
      try:

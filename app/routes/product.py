@@ -169,3 +169,87 @@ def editProd(id):
         return jsonify(data)
        except Exception as ex:
             return jsonify({'mensaje': "Error"})
+
+
+##### Crud de aviso ######
+
+#id del usuario
+@product.get('/getNotice/<id>')
+def getNotice(id):
+    # Crear un cursor para la base de datos y ejecutar una consulta SQL
+    cursor = db.database.cursor() 
+
+    cursor.execute("select a.*, u.nombre_usuario, p.titulo from usuario u, avisos a, productos p where a.id_user = u.id and a.id_prod = p.id and p.id_user = %s"%(str(id),))
+   
+    # Obtener todos los resultados de la consulta
+    myresult = cursor.fetchall()
+    
+   
+    # Convertir los resultados en un diccionario
+    insertObject = []  # Crear una lista vacía para almacenar los registros convertidos
+    
+    columnNames = [column[0] for column in cursor.description] 
+    for record in myresult:
+        # Crear un diccionario que mapea los nombres de columna a los valores de registro
+        insertObject.append(dict(zip(columnNames, record)))
+        #insertObject
+    #Cerrar conexion
+    cursor.close()
+
+    if insertObject == []:
+        res = make_response('No hay ningun usuario aun', 404)
+    else: res = make_response(insertObject,200)
+
+    return res
+                                              
+#	id	id_prod	id_user	aviso	fecha 
+@product.post('/addNotice/<string:id_prod>/<string:id_user>')
+def addNotice(id_prod, id_user):
+    new_notice = request.get_json()
+    aviso = new_notice['aviso']
+
+    if aviso:
+        try:
+            cursor = db.database.cursor()
+            sql = "INSERT INTO avisos (id_prod, id_user, aviso) VALUES (%s, %s, %s)"
+            data = (id_prod, id_user, aviso)
+            cursor.execute(sql, data)
+            db.database.commit()
+
+            return jsonify({'mensaje': 'Aviso registrado con éxito'})
+        except Exception as ex:
+            return jsonify({'mensaje': 'Error'})
+
+
+#id del aviso
+@product.put("/updateNotice/<string:id>")
+def updateNotice(id):
+    update_notice = request.get_json()
+
+    aviso = update_notice['aviso']
+
+    if aviso: 
+
+        cursor = db.database.cursor()
+        
+        sql = "UPDATE avisos SET aviso = %s, fecha = CURRENT_TIMESTAMP WHERE avisos.id = %s" 
+        data = (aviso, id) 
+        cursor.execute(sql, data)
+        db.database.commit()
+        resp = make_response(jsonify(data), 200)
+    else:
+        resp = make_response('Algo salió mal, revisa los datos...', 400)
+
+    return resp
+
+
+@product.delete("/deleteNotice/<string:id>")
+def deleteNotice(id):
+    # Crea un objeto cursor para ejecutar comandos en la base de datos
+    cursor = db.database.cursor()
+    sql = "DELETE FROM avisos WHERE id=%s"
+    # Crea una tupla con el valor del parámetro id
+    data = (id,)
+    cursor.execute(sql, data)
+    db.database.commit()
+    return "El aviso se ha eliminado correctamente"     

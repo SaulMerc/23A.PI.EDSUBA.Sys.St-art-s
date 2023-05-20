@@ -145,6 +145,7 @@ def deleteUser(id):
     db.database.commit()
     return "El usuario se ha eliminado correctamente"
 
+
 @user.get('/direccion/<id>')
 def getDireccion():
     # Crear un cursor para la base de datos y ejecutar una consulta SQL
@@ -172,29 +173,31 @@ def getDireccion():
 
     return res
 
+# id de usuario
 @user.post('/addDireccion/<id>')
-def addDireccion():
+def addDireccion(id): 
     new_direccion = request.get_json()
     colonia = new_direccion['colonia']
     cod_postal = new_direccion['cod_postal']
     municipio = new_direccion['municipio']
     calle = new_direccion['calle']
     num_ext_int = new_direccion['num_ext_int']
-
+    
     if colonia and cod_postal and municipio and calle and num_ext_int:
      try:
         cursor = db.database.cursor()
-        sql = "INSERT INTO direccion (colonia, cod_postal, municipio, calle, num_ext_int) VALUES (%s, %s, %s, %s, %s)"
-        data = (colonia,cod_postal,municipio,calle, num_ext_int)
+        sql = "INSERT INTO direccion (id_user, colonia, cod_postal, municipio, calle, num_ext_int) VALUES (%s, %s, %s, %s, %s, %s)"
+        data = (id,colonia,cod_postal,municipio,calle, num_ext_int)
         cursor.execute(sql, data)
         db.database.commit()
 
-        return jsonify({'mensaje':'Producto registrado con exito'})
+        return jsonify({'mensaje':'Dirección registrada con exito'})
      except Exception as ex:
             return jsonify({'mensaje': "Error"})
 
-@user.put("/updateDireccion/<id>")
-def updateDireccion(id=str(id)):
+#id de la dirección
+@user.put("/updateDireccion/<string:id>")
+def updateDireccion(id):
     update_direccion = request.get_json()
     colonia = update_direccion['colonia']
     cod_postal = update_direccion['cod_postal']
@@ -202,22 +205,21 @@ def updateDireccion(id=str(id)):
     calle = update_direccion['calle']
     num_ext_int = update_direccion['num_ext_int']
     
-
     if colonia and cod_postal and municipio and calle and num_ext_int:
- 
+       
         cursor = db.database.cursor()
-        sql = "UPDATE direccion SET colonia = %s, cod_postal = %s, municipio = %s, calle = %s, num_ext_int = %s WHERE id = %s"
+        sql = "UPDATE direccion SET colonia = %s, cod_postal = %s, municipio = %s, calle = %s, num_ext_int = %s WHERE direccion.id = %s"
         data = (colonia, cod_postal, municipio, calle, num_ext_int, id)
         cursor.execute(sql, data)
         db.database.commit()
-        resp=make_response(jsonify(data), 200)
-    
-    else: resp=make_response('Algo salio mal, revisa los datos...',400)
+        resp = make_response(jsonify(data), 200)
+    else:
+        resp = make_response('Algo salió mal, revisa los datos...', 400)
 
     return resp
 
-
-@user.delete("/deleteuser/<id>")
+#id de la dirección
+@user.delete("/deleteDireccion/<string:id>")
 def deleteDireccion(id):
     # Crea un objeto cursor para ejecutar comandos en la base de datos
     cursor = db.database.cursor()
@@ -227,3 +229,88 @@ def deleteDireccion(id):
     cursor.execute(sql, data)
     db.database.commit()
     return "La dirección se ha eliminado correctamente"     
+
+############## Crud de tarjeta ############
+#id	id_user	num_tarjeta	nombre	
+
+
+#id del usuario
+@user.get('/getCard/<id>')
+def getCard(id):
+    # Crear un cursor para la base de datos y ejecutar una consulta SQL
+    cursor = db.database.cursor() 
+    # ya las voy calando? ti
+    cursor.execute("select t.*, u.nombre_usuario from usuario u, met_pago t where t.id_user = u.id and u.id = %s"%(str(id),))
+   
+    # Obtener todos los resultados de la consulta
+    myresult = cursor.fetchall()
+    
+   
+    # Convertir los resultados en un diccionario
+    insertObject = []  # Crear una lista vacía para almacenar los registros convertidos
+    
+    columnNames = [column[0] for column in cursor.description] 
+    for record in myresult:
+        # Crear un diccionario que mapea los nombres de columna a los valores de registro
+        insertObject.append(dict(zip(columnNames, record)))
+        #insertObject
+    #Cerrar conexion
+    cursor.close()
+
+    if insertObject == []:
+        res = make_response('No hay ningun usuario aun', 404)
+    else: res = make_response(insertObject,200)
+
+    return res
+
+
+@user.post('/addCard/<string:id>')
+def addCard(id): 
+    new_card = request.get_json()
+    num_tarjeta = new_card['num_tarjeta']
+    nombre = new_card['nombre']
+    # es tarjeta o metodo de pago? va
+    #met_pago    no llega id_user??
+    if num_tarjeta and nombre:
+     try:
+        cursor = db.database.cursor()
+        sql = "INSERT INTO met_pago (id_user, num_tarjeta, nombre) VALUES (%s, %s, %s)"
+        data = (id,num_tarjeta,nombre)
+        cursor.execute(sql, data)
+        db.database.commit()
+
+        return jsonify({'mensaje':'Tarjeta registrada con exito'})
+     except Exception as ex:
+            return jsonify({'mensaje': "Error"})
+
+#id de la dirección
+@user.put("/updateCard/<string:id>")
+def updateCard(id):
+    update_card = request.get_json()
+    num_tarjeta =  update_card['num_tarjeta']
+    nombre = update_card ['nombre']
+    
+    if num_tarjeta and nombre:
+       
+        cursor = db.database.cursor()
+        sql = "UPDATE met_pago SET num_tarjeta = %s, nombre = %s WHERE met_pago.id = %s"
+        data = (num_tarjeta, nombre, id)
+        cursor.execute(sql, data)
+        db.database.commit()
+        resp = make_response(jsonify(data), 200)
+    else:
+        resp = make_response('Algo salió mal, revisa los datos...', 400)
+
+    return resp
+
+#id del met_pago
+@user.delete("/deleteCard/<string:id>")
+def deleteCard(id):
+    # Crea un objeto cursor para ejecutar comandos en la base de datos
+    cursor = db.database.cursor()
+    sql = "DELETE FROM met_pago WHERE id=%s"
+    # Crea una tupla con el valor del parámetro id
+    data = (id,)
+    cursor.execute(sql, data)
+    db.database.commit()
+    return "La tarjeta se ha eliminado correctamente"     
