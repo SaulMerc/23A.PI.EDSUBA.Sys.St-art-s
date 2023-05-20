@@ -1,4 +1,4 @@
-from flask import Flask, Blueprint
+from flask import Flask, Blueprint, render_template
 from routes.user import user
 from routes.images import images
 from routes.comment import comment
@@ -14,6 +14,9 @@ app.register_blueprint(car)
 app.register_blueprint(product)
 
 
-
+app.route("/")
+def raiz():
+    render_template("../Frontend/static/index.html")
+    return
 if __name__=='__main__':
     app.run(debug=True,port=3000)
