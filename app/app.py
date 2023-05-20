@@ -16,7 +16,7 @@ app.register_blueprint(product)
 
 app.route("/")
 def raiz():
-    render_template("../Frontend/static/index.html")
-    return
+    
+    return render_template("../Frontend/static/index.html")
 if __name__=='__main__':
     app.run(debug=True,port=3000)
