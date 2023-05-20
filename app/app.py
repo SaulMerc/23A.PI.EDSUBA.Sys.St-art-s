@@ -7,6 +7,7 @@ from routes.product import product
 
 
 app=Flask(__name__)
+
 app.register_blueprint(user)
 app.register_blueprint(images)
 app.register_blueprint(comment)
@@ -17,6 +18,7 @@ app.register_blueprint(product)
 @app.route("/")
 def raiz():
     
-    return render_template("../Frontend/static/index.html")
+    return render_template("index.html")
+
 if __name__=='__main__':
     app.run(debug=True,port=3000)

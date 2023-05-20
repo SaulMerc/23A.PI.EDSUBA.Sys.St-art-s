@@ -1,0 +1,121 @@
+<!-- Página del carrito -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <title>Carrito St-art's</title>
+</head>
+
+<body class="gridCart">
+    <header class="gridH">
+        <nav class="navP bcCom cComp">
+            <div class="menu flexC">
+                <button type="button" class="unset">
+                    <img src="" type="image/svg+xml" class="imgM" alt="">
+                </button>
+            </div>
+
+            <div class="logo flexC">
+                <a href="/"><img class="imageLogo" alt=""></a>
+            </div>
+            <div class="search flexC">
+                <input type="text" class="navB" placeholder="Pinturas de..." onkeypress="buscar">
+                <button type="button" class="searchBtn" onclick="">
+                    Buscar
+                </button>
+            </div>
+            <div class="login flexC">
+                <a href="signIn.html">Iniciar sesión</a>&nbsp;&nbsp;<a href="signUp.html">
+                    Registrarse</a>
+            </div>
+            <div class="cart flexC">
+                <a href="cart.html"><img src="" alt="" class="imageCart"></a>
+            </div>
+        </nav>
+        <div class="sidebar bcCom">
+            <h2 class="cWhite">Categorias</h2><br>
+            <ul>
+                <li><a href="search.html">Opción 1</a></li>
+                <li><a href="search.html">Opción 2</a></li>
+                <li><a href="search.html">Opción 3</a></li>
+            </ul><br>
+            <h2 class="cWhite">Modo oscuro</h2>
+            <label class="switch">
+                <input type="checkbox" id="dark__ModeToggle">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </header>
+    <aside class="gridA">
+        <div class="cardDef bcWhite">
+            <h2>Subtotal(n productos): <span>$$$</span></h2>
+            <br>
+            <input type="button" value="Proceder al pago" class="padd5" id="pPay">
+        </div>
+    </aside>
+    <main class="gridM">
+        <div class="cardDef bcWhite ">
+            <ul class="iFlex" id="lista">
+                <li class="gridPCart">
+                    <div class="flexC gridImg padd5">
+                        <img src=" ../images/Minimalism Landscape.png" alt="" class="imgProduct">
+                    </div>
+                    <h3 class="gridName flexCL padd5">Nombre de La obra</h3>
+                    <p class="gridPrice flexCL padd5">$$$</p>
+                    <h3 class="gridNart flexCL padd5">Nombre del artista</h3>
+                    <p class="gridDesc padd5">Descripcion</p>
+                    <div class="gridSelect padd10 flexC">
+                        <input type="checkbox"  value="selected">
+                    </div>
+                    <div class="gridDel flexE padd5">
+                        <input type="button" value="Eliminar" class="btnCom" id="del">
+                    </div>
+                    <div class="gridSep bcCom"></div>
+                </li>
+                <li class="gridPCart">
+                    <div class="flexC gridImg padd5">
+                        <img src="../images/Landscapes Horizontal.jpg" alt="" class="imgProduct">
+                    </div>
+                    <h3 class="gridName flexCL padd5">Nombre de La obra</h3>
+                    <p class="gridPrice flexCL padd5">$$$</p>
+                    <h3 class="gridNart flexCL padd5">Nombre del artista</h3>
+                    <p class="gridDesc padd5">Descripcion</p>
+                    <div class="gridSelect padd10 flexC">
+                        <input type="checkbox"  value="selected">
+                    </div>
+                    <div class="gridDel flexE padd5">
+                        <input type="button" value="Eliminar" class="btnCom" id="del">
+                    </div>
+                    <div class="gridSep bcCom"></div>
+                </li>
+                <li class="gridPCart">
+                    <div class="flexC gridImg padd5">
+                        <img src="../images/Landscapes Horizontal.jpg" alt="" class="imgProduct">
+                    </div>
+                    <h3 class="gridName flexCL padd5">Nombre de La obra</h3>
+                    <p class="gridPrice flexCL padd5">$$$</p>
+                    <h3 class="gridNart flexCL padd5">Nombre del artista</h3>
+                    <p class="gridDesc padd5">Descripcion</p>
+                    <div class="gridSelect padd10 flexC">
+                        <input type="checkbox"  value="selected">
+                    </div>
+                    <div class="gridDel flexE padd5">
+                        <input type="button" value="Eliminar" class="btnCom" id="del">
+                    </div>
+                    <div class="gridSep bcCom"></div>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <footer class="gridF">
+        Footer
+    </footer>
+    <script src="../scripts/script.js"></script>
+    <script src="../scripts/cart.js"></script>
+</body>
+
+</html>

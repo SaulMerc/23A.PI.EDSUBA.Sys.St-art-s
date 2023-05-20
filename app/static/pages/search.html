@@ -1,0 +1,65 @@
+<!-- Página del resultado de la búsqueda -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <title>Resultado de la búsqueda</title>
+</head>
+<body class="gridS">
+    <header class="gridH ">
+        <nav class="navP bcCom cComp">
+            <div class="menu flexC">
+                <button type="button" class="unset">
+                    <img src="" type="image/svg+xml" class="imgM" alt="">
+                </button>
+            </div>
+
+            <div class="logo flexC">
+                <a href="/"><img class="imageLogo" alt=""></a>
+            </div>
+            <div class="search flexC">
+                <input type="text" class="navB" placeholder="Pinturas de..." onkeypress="buscar">
+                <button type="button" class="searchBtn" onclick="">
+                    Buscar
+                </button>
+            </div>
+            <div class="login flexC">
+                <a href="signIn.html">Iniciar sesión</a>&nbsp;&nbsp;<a href="signUp.html">
+                    Registrarse</a>
+            </div>
+            <div class="cart flexC">
+                <a href="cart.html"><img src="" alt="" class="imageCart"></a>
+            </div>
+        </nav>
+        <div class="sidebar bcCom">
+            <h2 class="cWhite">Categorias</h2><br>
+            <ul>
+                <li><a href="search.html">Opción 1</a></li>
+                <li><a href="search.html">Opción 2</a></li>
+                <li><a href="search.html">Opción 3</a></li>
+            </ul><br>
+            <h2 class="cWhite">Modo oscuro</h2>
+                <label class="switch">
+                <input type="checkbox" id="dark__ModeToggle">
+                <span class="slider round"></span>
+                </label>
+        </div>
+    </header>
+    <main class="gridM iFlex">
+        <div class="card__Large  grid__shop ">
+            <img class="grid__image img__card" src="https://picsum.photos/370/325" alt="" />
+            <h2 class = "grid__author txt__Ita"><a href="artist.html" class="txt__Title">Nombre del autor</a></h2>
+            <h3 class="grid__obName "><a href="product.html">Nombre de la obra</a></h3>
+            <h4 class="grid__cat txt__Normal"><a href="search.html">Categoría </a></h4>
+            <p class="grid__price">$1,600 </p>
+        </div>
+    </main>
+    <footer class="gridF">
+        Footer no
+    </footer>
+    <script src="../scripts/script.js"></script>
+</body>
+</html>

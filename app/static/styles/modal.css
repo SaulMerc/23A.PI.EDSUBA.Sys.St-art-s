@@ -1,0 +1,41 @@
+.oculto{
+    display: none;
+}
+.alerta{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    background-color: rgba(44, 44, 44, 0.67);
+}
+.contAlert{
+    max-height: 700px;
+    max-width: 600px;
+    margin: 20vh auto auto auto;
+    padding: 20px;
+    border-radius: 5px;
+    background: var(--white);
+}
+
+.closeD, .closeP{
+    display: absolute;
+    float: right;
+    padding: 7px;
+    border: 1px solid var(--complement);
+    background: red;
+    border-radius: 50%;
+}
+.closeD:hover, .closeP:hover{
+    cursor: pointer;
+    background: red;
+    color: var(--white);
+    font-weight: 100;
+    border: 1px solid var(--white);
+}
+
+#mostrarD:hover, #mostrarP:hover{
+    cursor: pointer;
+    color: var(--primary);
+}

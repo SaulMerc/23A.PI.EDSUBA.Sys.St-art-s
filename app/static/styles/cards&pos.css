@@ -1,0 +1,166 @@
+@import url(fonts&col.css);
+
+.container {
+    display: inline-flex;
+    flex-flow: row wrap;
+    max-width: 100rem;
+    margin-inline: 20px;
+    justify-content: center;
+    padding-inline: 1.5rem;
+    height: 100%;
+}
+.cardDef {
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    transition: 0.3s ease all;
+}
+.card__Large {
+    max-width: 500px;
+    max-height: 550px;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 20px;
+    background: var(--white);
+    color: var(--complement);
+    word-break: break-all;
+    text-align: center;
+}
+
+.card__Art {
+    max-width: 600px;
+    max-height: 345px;
+    padding: 10px;
+    margin: 10px 10px;
+    border-radius: 3px;
+    background:var(--white);
+    color: var(--complement);
+    word-break: break-all;
+    text-align: center;
+}
+.img__card {
+    display: flex;
+    border: solid 4px white;
+    border-radius: 4px;
+}
+.img__cardP {
+    aspect-ratio: auto;
+    width: 30vw;
+    border: solid 4px white;
+    border-radius: 4px;
+}
+.img__cardG{
+    max-width: 20vw;
+    max-height: 25vh;
+    aspect-ratio: auto;
+}
+.card__Large:hover{
+    transition: 0.3s ease all;
+    box-shadow: 5px 5px 5px rgba(136, 135, 135, 0.603);
+}
+
+.card__Art:hover{
+    transition: 0.3s ease all;
+    box-shadow: 5px 5px 5px rgba(136, 135, 135, 0.603);
+}
+
+.card__Art > h2:hover, h4:hover a:hover, div:hover a:hover{
+    cursor: pointer;
+    color: var(--primary);
+}
+
+.card__Art > {
+    cursor: pointer;
+    color: var(--primary);
+}
+/*Carrusel*/
+.carrusel {
+    width: 100%;
+    max-width: 800px;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+
+}
+
+.container__elementocarrusel {
+    width: 100%;
+    max-width: 800px;
+    height: 350px;
+    position: absolute;
+    transition: all 0.5s;
+}
+
+.container__elementocarrusel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.infoArt h2{
+    margin: 20px 20px 0px 0px;
+}
+
+.art{
+    position: fixed;
+    width: 18vw;
+}
+
+/* SrollBars */
+.gridExpo > .gridDesc::-webkit-scrollbar{
+    -webkit-appearance: none;
+}
+.gridExpo > .gridDesc::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+.gridExpo > .gridDesc::-webkit-scrollbar-button:increment,.gridExpo > .gripP::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.gridExpo > .gridDesc::-webkit-scrollbar:horizontal {
+    height: 15px;
+}
+
+.gridExpo > .gridDesc::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 10px;
+    border: 2px solid var(--secudary);
+}
+
+.gridExpo > .gridDesc::-webkit-scrollbar-track {
+    border-radius: 5px;  
+}
+
+.alert{
+    max-width: 50%;
+    width: 40%;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 5px;
+    color: var(--white);
+}
+.alert:hover{
+    cursor: pointer;
+    background: var(--complement);
+    
+}
+
+.close{
+    display: absolute;
+    float: right;
+    padding: 7px;
+    margin-left: 20px;
+    border: 1px solid var(--complement);
+    background: red;
+    border-radius: 50%;
+}
+.close:hover{
+    cursor: pointer;
+    background: red;
+    color: white;
+    font-weight: 100;
+    border: 1px solid var(--white);
+}
