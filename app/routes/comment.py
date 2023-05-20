@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, Blueprint,make_response,jsonify
+from flask import Flask, render_template, request, jsonify, redirect, url_for, Blueprint,make_response,jsonify
 
 import database as db
 
@@ -45,13 +45,17 @@ def addComment():
     comentario = new_comment['comentario']
 
     if id_prod and id_user and comentario:
+     try:
         cursor = db.database.cursor()
         sql = "INSERT INTO comentarios (id_prod, id_user, comentario) VALUES (%s, %s, %s)"
         data = (id_prod,id_user,comentario)
         cursor.execute(sql, data)
         db.database.commit()
         cursor.close()
-    return jsonify("data")
+        return jsonify(data)
+     except Exception as ex:
+            return jsonify({'mensaje': "Error"})
+
 
 @comment.delete('/deleteComment/<string:id>')
 def deleteComment(id):
@@ -69,14 +73,17 @@ def deleteComment(id):
 @comment.put('/editComment/<string:id>')
 def editProd(id):
     comentario = request.form['comentario']
-   
+  
     if comentario:
+     try:
         cursor = db.database.cursor()
         sql = "UPDATE comentarios SET comentario = %s WHERE id = %s"
         data = (comentario,id)
         cursor.execute(sql, data)
         db.database.commit()
-    return redirect(url_for('comment.home'))
+        return jsonify(data)
+     except Exception as ex:
+            return jsonify({'mensaje': "Error"})
 
 # if __name__ == "__main__":
 #      app.run(debug=True,port=5000)

@@ -72,6 +72,7 @@ def addUser():
     
 
     if nombre and correo and contrasena and nombre_usuario and f_nacimiento and numero_tel:
+     try:
         cursor = db.database.cursor()
         sql = "INSERT INTO usuario (id, nombre, correo, nombre_usuario, f_nacimiento, numero_tel, id_rol) VALUES (NULL, %s, %s, %s, %s, %s, %s)"
         data = (nombre, correo, nombre_usuario, f_nacimiento, numero_tel, 1)
@@ -89,7 +90,10 @@ def addUser():
         db.database.commit()
         cursor.close()
         respuesta = respuesta + data
-        return jsonify(respuesta)
+        return jsonify({'mensaje':'Usuario registrado con exito'})
+     except Exception as ex:
+            return jsonify({'mensaje': "Error"})
+
 
 # ////////////////////////////////////////////////
 
@@ -104,6 +108,7 @@ def updateUser(id=str(id)):
     
 
     if nombre and correo and nombre_usuario and f_nacimiento and numero_tel and id:
+ 
         cursor = db.database.cursor()
         sql = "UPDATE usuario SET nombre = %s, correo = %s, nombre_usuario = %s, f_nacimiento = %s, numero_tel = %s WHERE id = %s"
         data = (nombre, correo, nombre_usuario, f_nacimiento, numero_tel, id)

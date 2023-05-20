@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, Blueprint,make_response
+from flask import Flask, render_template, request, jsonify, redirect, url_for, Blueprint,make_response
 import database as db
 
 product = Blueprint('product', __name__, url_prefix='/api')
@@ -90,15 +90,30 @@ def addProduct():
     existencia = new_product['existencia']
     precio = new_product['precio']
     categoria = new_product['categoria']
+    imagen = new_product['imagen']
 
 
-    if id_user and titulo and descripcion and existencia and precio and categoria:
+    if id_user and titulo and descripcion and existencia and precio and categoria and imagen:
+     try:
         cursor = db.database.cursor()
         sql = "INSERT INTO productos (id_user, titulo, descripcion, existencia, precio, categoria) VALUES (%s, %s, %s, %s, %s, %s)"
         data = (id_user,titulo,descripcion,existencia, precio, categoria)
         cursor.execute(sql, data)
         db.database.commit()
-    return ""
+
+        # Obtener el último ID insertado
+        last_insert_id = cursor.lastrowid
+
+        # Insertar en otra tabla utilizando el último ID
+        cursor = db.database.cursor()
+        sql = "INSERT INTO `imagenes` (`id_prod`, `imagen`) VALUES (%s, %s)"
+        data = (last_insert_id, imagen)
+        cursor.execute(sql, data)
+        db.database.commit()
+
+        return jsonify({'mensaje':'Producto registrado con exito'})
+     except Exception as ex:
+            return jsonify({'mensaje': "Error"})
 
 @product.delete('/deleteProd/<string:id>')
 def deleteProd(id):
@@ -109,26 +124,29 @@ def deleteProd(id):
     data = (id,)
     cursor.execute(sql, data)
     db.database.commit()
-    return redirect(url_for('product.home'))
+    return "El producto se ha eliminado correctamente"
 
 
 
 @product.put('/editProd/<string:id>')
 def editProd(id):
-    
-    titulo = request.form['titulo']
-    descripcion = request.form['descripcion']
-    existencia = request.form['existencia']
-    precio = request.form['precio']
-    categoria = request.form['categoria']
+    update_product = request.get_json()
+    titulo = update_product['titulo']
+    descripcion = update_product['descripcion']
+    existencia = update_product['existencia']
+    precio = update_product['precio']
+    categoria = update_product['categoria']
 
     if titulo and descripcion and existencia and precio and categoria:
+       try:
         cursor = db.database.cursor()
         sql = "UPDATE productos SET  titulo = %s, descripcion = %s, existencia = %s, precio = %s, categoria = %s WHERE id = %s"
         data = (titulo, descripcion, existencia, precio, categoria, id)
         cursor.execute(sql, data)
         db.database.commit()
         
-    return redirect(url_for('product.home'))
+        return jsonify(data)
+       except Exception as ex:
+            return jsonify({'mensaje': "Error"})
 
 

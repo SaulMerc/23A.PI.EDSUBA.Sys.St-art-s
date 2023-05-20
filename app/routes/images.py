@@ -43,11 +43,6 @@ def upload_file():
 
 
 
-
-
-
-
-
 @images.route('/images/<user_id>', methods=['GET'])
 def get_user_images(user_id):
    
