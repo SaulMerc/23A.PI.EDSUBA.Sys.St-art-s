@@ -59,7 +59,7 @@ def getUserById(id=id):
     return res
     
 
-@user.post('/userI/')
+@user.post('/addUser/')
 def addUser():
     new_user = request.get_json()
     nombre = new_user['nombre']
@@ -69,8 +69,6 @@ def addUser():
     f_nacimiento = new_user['f_nacimiento']
     numero_tel = new_user['numero_tel']
 
-    
-
     if nombre and correo and contrasena and nombre_usuario and f_nacimiento and numero_tel:
      try:
         cursor = db.database.cursor()
@@ -79,17 +77,33 @@ def addUser():
         cursor.execute(sql, data)
         db.database.commit()
         respuesta = data
+
         # Obtener el último ID insertado
-        last_insert_id = cursor.lastrowid
-        print(last_insert_id)
+        last_insert_idUser = cursor.lastrowid
         #Insersión de la contraseña del usuario
         cursor = db.database.cursor()
         sql = "INSERT INTO contrasenas (id_usuario, contrasena) VALUES (%s, %s)"
-        data = (last_insert_id, contrasena)
+        data = (last_insert_idUser, contrasena)
         cursor.execute(sql, data)
         db.database.commit()
-        cursor.close()
         respuesta = respuesta + data
+
+        #Insersión de la contraseña del usuario
+        cursor = db.database.cursor()
+        sql = "INSERT INTO `carrito` (`id`, `vendido`, `fecha_vendido`) VALUES (NULL, 'no', CURRENT_TIMESTAMP)"
+        cursor.execute(sql)
+        db.database.commit()
+        
+        # Obtener el último ID insertado
+        last_insert_id = cursor.lastrowid
+        #Insersión de la contraseña del usuario
+        cursor = db.database.cursor()
+        sql = "INSERT INTO `rel_user_car` (`id_user`, `id_car`) VALUES (%s, %s) "
+        data = (last_insert_idUser, last_insert_id)
+        cursor.execute(sql, data)
+        db.database.commit()
+
+        cursor.close()
         return jsonify({'mensaje':'Usuario registrado con exito'})
      except Exception as ex:
             return jsonify({'mensaje': "Error"})
@@ -97,7 +111,7 @@ def addUser():
 
 # ////////////////////////////////////////////////
 
-@user.put("/useru/<id>")
+@user.put("/updateUser/<id>")
 def updateUser(id=str(id)):
     update_user = request.get_json()
     nombre = update_user['nombre']
