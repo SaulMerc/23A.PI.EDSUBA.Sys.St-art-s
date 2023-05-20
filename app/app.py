@@ -14,7 +14,7 @@ app.register_blueprint(car)
 app.register_blueprint(product)
 
 
-app.route("/")
+@app.route("/")
 def raiz():
     
     return render_template("../Frontend/static/index.html")
