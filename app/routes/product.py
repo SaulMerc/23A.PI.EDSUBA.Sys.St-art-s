@@ -114,6 +114,27 @@ def addProduct():
         return jsonify({'mensaje':'Producto registrado con exito'})
      except Exception as ex:
             return jsonify({'mensaje': "Error"})
+     
+
+
+@product.post("/addProductCar/<string:id>/<string:id_user>")
+def addProductCar(id, id_user):
+    try:
+        cursor = db.database.cursor()
+        cursor.execute("SELECT c.id FROM carrito c, usuario u, rel_user_car ruc WHERE c.vendido = 'no' AND ruc.id_car = c.id AND c.id = %s AND ruc.id_user = u.id AND u.id = %s", (id,id_user))
+        result = cursor.fetchone()
+
+        cursor = db.database.cursor()
+        sql = "INSERT INTO `rel_car_prod` (`id_prod`, `id_car`) VALUES (%s, %s)"
+        data = (id, result[0])  # Extraer el valor de la tupla
+        cursor.execute(sql, data)
+        db.database.commit()
+
+        return jsonify({'mensaje': 'Producto registrado con éxito'})
+    except Exception as ex:
+        return jsonify({'mensaje': 'Error'})
+
+
 
 @product.delete('/deleteProd/<string:id>')
 def deleteProd(id):

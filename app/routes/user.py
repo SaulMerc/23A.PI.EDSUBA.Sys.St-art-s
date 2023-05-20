@@ -108,7 +108,7 @@ def addUser():
             return jsonify({'mensaje': "Error"})
 
 
-# ////////////////////////////////////////////////
+
 
 @user.put("/updateUser/<id>")
 def updateUser(id=str(id)):
