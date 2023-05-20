@@ -77,8 +77,7 @@ def addUser():
         cursor.execute(sql, data)
         db.database.commit()
         respuesta = data
-
-        # Obtener el último ID insertado
+        # Obtener el último id que se insertó en la tabla
         last_insert_idUser = cursor.lastrowid
         #Insersión de la contraseña del usuario
         cursor = db.database.cursor()
