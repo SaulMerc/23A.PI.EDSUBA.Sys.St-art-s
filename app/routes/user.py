@@ -144,3 +144,86 @@ def deleteUser(id):
     cursor.execute(sql, data)
     db.database.commit()
     return "El usuario se ha eliminado correctamente"
+
+@user.get('/direccion/<id>')
+def getDireccion():
+    # Crear un cursor para la base de datos y ejecutar una consulta SQL
+    cursor = db.database.cursor()
+    cursor.execute("select d.*, u.nombre_usuario from usuario u, direccion d where d.id_user = u.id and u.id = %s"%(str(id),))
+    # cursor.execute("SELECT * FROM usuario")
+    # Obtener todos los resultados de la consulta
+    myresult = cursor.fetchall()
+    
+   
+    # Convertir los resultados en un diccionario
+    insertObject = []  # Crear una lista vacía para almacenar los registros convertidos
+    
+    columnNames = [column[0] for column in cursor.description] 
+    for record in myresult:
+        # Crear un diccionario que mapea los nombres de columna a los valores de registro
+        insertObject.append(dict(zip(columnNames, record)))
+        #insertObject
+    #Cerrar conexion
+    cursor.close()
+
+    if insertObject == []:
+        res = make_response('No hay ningun usuario aun', 404)
+    else: res = make_response(insertObject,200)
+
+    return res
+
+@user.post('/addDireccion/<id>')
+def addDireccion():
+    new_direccion = request.get_json()
+    colonia = new_direccion['colonia']
+    cod_postal = new_direccion['cod_postal']
+    municipio = new_direccion['municipio']
+    calle = new_direccion['calle']
+    num_ext_int = new_direccion['num_ext_int']
+
+    if colonia and cod_postal and municipio and calle and num_ext_int:
+     try:
+        cursor = db.database.cursor()
+        sql = "INSERT INTO direccion (colonia, cod_postal, municipio, calle, num_ext_int) VALUES (%s, %s, %s, %s, %s)"
+        data = (colonia,cod_postal,municipio,calle, num_ext_int)
+        cursor.execute(sql, data)
+        db.database.commit()
+
+        return jsonify({'mensaje':'Producto registrado con exito'})
+     except Exception as ex:
+            return jsonify({'mensaje': "Error"})
+
+@user.put("/updateDireccion/<id>")
+def updateDireccion(id=str(id)):
+    update_direccion = request.get_json()
+    colonia = update_direccion['colonia']
+    cod_postal = update_direccion['cod_postal']
+    municipio = update_direccion['municipio']
+    calle = update_direccion['calle']
+    num_ext_int = update_direccion['num_ext_int']
+    
+
+    if colonia and cod_postal and municipio and calle and num_ext_int:
+ 
+        cursor = db.database.cursor()
+        sql = "UPDATE direccion SET colonia = %s, cod_postal = %s, municipio = %s, calle = %s, num_ext_int = %s WHERE id = %s"
+        data = (colonia, cod_postal, municipio, calle, num_ext_int, id)
+        cursor.execute(sql, data)
+        db.database.commit()
+        resp=make_response(jsonify(data), 200)
+    
+    else: resp=make_response('Algo salio mal, revisa los datos...',400)
+
+    return resp
+
+
+@user.delete("/deleteuser/<id>")
+def deleteDireccion(id):
+    # Crea un objeto cursor para ejecutar comandos en la base de datos
+    cursor = db.database.cursor()
+    sql = "DELETE FROM direccion WHERE id=%s"
+    # Crea una tupla con el valor del parámetro id
+    data = (id,)
+    cursor.execute(sql, data)
+    db.database.commit()
+    return "La dirección se ha eliminado correctamente"     

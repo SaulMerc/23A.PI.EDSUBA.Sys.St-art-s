@@ -169,5 +169,3 @@ def editProd(id):
         return jsonify(data)
        except Exception as ex:
             return jsonify({'mensaje': "Error"})
-
-
