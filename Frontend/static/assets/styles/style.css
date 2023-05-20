@@ -1,0 +1,48 @@
+@import url(fonts&col.css);
+@import url(grids.css);
+@import url(navbar.css);
+@import url(queries.css);
+@import url(imagesConf.css);
+@import url(cards&pos.css);
+@import url(forms.css);
+@import url(buttons.css);
+@import url(dkMode.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    background: var(--fondo);
+    scroll-behavior: smooth;
+    min-height: calc(100vh);
+}
+
+/* SrollBars */
+html::-webkit-scrollbar{
+    -webkit-appearance: none;
+}
+html::-webkit-scrollbar:vertical {
+    width: 11px;
+}
+
+html::-webkit-scrollbar-button:increment,.gridExpo > .gripP::-webkit-scrollbar-button {
+    display: none;
+} 
+
+html::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 20px;
+    border: 2px solid var(--primary);
+}
+
+html::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}

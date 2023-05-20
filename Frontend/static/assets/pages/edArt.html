@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <title>Editar Perfil</title>
+</head>
+<body class="gridMain">
+    <header class="gridH">
+        <nav class="navP bcCom cComp">
+            <div class="menu flexC">
+                <button type="button" class="unset">
+                    <img src="" type="image/svg+xml" class="imgM" alt="">
+                </button>
+            </div>
+
+            <div class="logo flexC">
+                <a href="index.html"><img class="imageLogo" alt=""></a>
+            </div>
+            <div class="search flexC">
+                <input type="text" class="navB" placeholder="Pinturas de..." onkeypress="buscar">
+                <button type="button" class="searchBtn">
+                    Buscar
+                </button>
+            </div>
+            <div class="login flexC">
+                <a href="assets/pages/signIn.html">Iniciar sesión</a>&nbsp;&nbsp;<a href="assets/pages/signUp.html">
+                    Registrarse</a>
+            </div>
+            <div class="cart flexC">
+                <a href="assets/pages/cart.html"><img src="" alt="" class="imageCart"></a>
+            </div>
+        </nav>
+        <div class="sidebar bcCom">
+            <h2 class="cWhite">Categorias</h2><br>
+            <ul>
+                <li><a href="assets/pages/search.html">Opción 1</a></li>
+                <li><a href="assets/pages/search.html">Opción 2</a></li>
+                <li><a href="assets/pages/search.html">Opción 3</a></li>
+            </ul><br>
+            <h2 class="cWhite">Modo oscuro</h2>
+
+                <label class="switch">
+                <input type="checkbox" id="dark__ModeToggle">
+                <span class="slider round"></span>
+                </label>
+                </span>
+
+        </div>
+    </header>
+    <main class="gridM iFlex">
+        <form action="POST" class="cardDef bcWhite">
+            <label for="FotoPerfil">Foto De Perfil<i>*</i></label>
+            <input type="file" name="FotoPerfil" id=""><br>
+    
+            <label for="Nombre">Nombre<i>*</i></label>
+            <input type="text" name="Nombre" id="" placeholder="Nombre..."><br>
+    
+            <label for="PApellido">Primer apellido<i>*</i></label>
+            <input type="text" name="PApellido" id="" placeholder="Primer apellido..."><br>
+            
+            <label for="SApellido">Segundo apellido<i>*</i></label>
+            <input type="text" name="SApellido" id="" placeholder="Segundo apellido..."><br>
+    
+            <label for="NumTel">Número Telefónico<i>*</i></label>
+            <input type="number" name="NumTel" id="" placeholder="111-111-1111"><br>
+    
+            <label for="NombreUsuario">Nombre de usuario<i>*</i></label>
+            <input type="text" name="NombreUsuario" id="" placeholder="usuario23..."><br>
+    
+            <label for="Correo">Correo electrónico<i>*</i></label>
+            <input type="email" name="Correo" id="" placeholder="ejemplo@gmail.com"><br>
+    
+            <label for="Pass">Contraseña<i>*</i></label>
+            <input type="password" name="Pass" id="" placeholder="contraseña"><br>
+    
+            <input type="submit" value="Guardar">
+        </form>
+    </main>
+    <footer class="gridF">
+        no
+    </footer>
+    <script src="../scripts/script.js"></script>
+</body>
+</html>

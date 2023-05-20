@@ -1,0 +1,102 @@
+<!-- Página del producto unitario -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <title>Product</title>
+</head>
+
+<body class="gridProd">
+    <header class="gridH ">
+        <nav class="navP bcCom cComp">
+            <div class="menu flexC">
+                <button type="button" class="unset">
+                    <img src="" type="image/svg+xml" class="imgM" alt="">
+                </button>
+            </div>
+
+            <div class="logo flexC">
+                <a href="../../index.html"><img class="imageLogo" alt=""></a>
+            </div>
+            <div class="search flexC">
+                <input type="text" class="navB" placeholder="Pinturas de..." onkeypress="buscar">
+                <button type="button" class="searchBtn" onclick="">
+                    Buscar
+                </button>
+            </div>
+            <div class="login flexC">
+                <a href="signIn.html">Iniciar sesión</a>&nbsp;&nbsp;<a href="signUp.html">
+                    Registrarse</a>
+            </div>
+            <div class="cart flexC">
+                <a href="cart.html"><img src="" alt="" class="imageCart"></a>
+            </div>
+        </nav>
+        <div class="sidebar bcCom">
+            <h2 class="cWhite">Categorias</h2><br>
+            <ul>
+                <li><a href="search.html">Opción 1</a></li>
+                <li><a href="search.html">Opción 2</a></li>
+                <li><a href="search.html">Opción 3</a></li>
+            </ul><br>
+            <h2 class="cWhite">Modo oscuro</h2>
+            <label class="switch">
+                <input type="checkbox" id="dark__ModeToggle">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </header>
+    <main class="gridM iFlex">
+        <section class="cardDef bcWhite">
+            <div class="gridSProd">
+                <div class="gridCat flexCL padd20 img__cardG">
+                    <h4><a href="search.html">Categoría</a> </h4>
+                </div>
+
+                <div class="gridImg  flexC padd10 ">
+                    <img src="https://picsum.photos/370/325" alt="" class="img__cardP" />
+                    <hr>
+                </div>
+                <div class="gridTitl flexCL padd20">
+                    <h2>Nombre de la obra</h2>
+                </div>
+                <div class="gridDesc padd20">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non minus ipsa nostrum porro accusamus
+                        voluptas, expedita repellat </p>
+                </div>
+                <div class="gridPrice flexCL padd20">
+                    <h3>$2,600</h3>
+                </div>
+                <div class="gridAvalia flexCL padd5">
+                    <h3 id="estado">Disponible</h3>
+                </div>
+                <div class="gridBtc padd20 flexC">
+                    <input type="button" value="Añadir al carrito" class="btnCart padd10">
+                </div>
+                <div class="gridComTitl flexCL padd20">
+                    <h3>Comentarios</h3>
+                </div>
+                <div class="gridInsCom padd20 flexCL">
+                    <input type="text" value="" class="btnCart padd10 marg" placeholder="Comentario ...">
+                    <input type="button" value="Comentar" class="btnCom">
+                </div>
+                <div class="gridCom flexCL padd20">
+                    <h3>-Aqui se insertan todos los comentarios-</h3>
+                </div>
+                <div class="gridDate flexCL padd20">
+                    <h3>22/05/2023</h3>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="gridF">
+        Footer no
+    </footer>
+    <script src="../scripts/script.js"></script>
+</body>
+
+</html>
