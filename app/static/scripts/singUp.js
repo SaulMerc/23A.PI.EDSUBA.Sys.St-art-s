@@ -40,7 +40,7 @@ const addUser = async()=> {
         "acerca_mi": acercaDe,
         "contrasena" : pass
     };
-    const url = "34.208.161.62/api/addUser/";
+    const url = "http://34.208.161.62/api/addUser/";
     
     if (!validarContraseña(pass)) {
         alert("La contraseña debe tener al menos un número y una mayúscula y ser mayor a 7 caracteres");
