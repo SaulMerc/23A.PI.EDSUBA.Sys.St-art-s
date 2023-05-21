@@ -60,6 +60,7 @@ const addUser = async()=> {
       const respuesta = await axios.post(url, body, {
         headers: {
           "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "http://siteA.com"
         }
       });
       alert("Usuario creado con exito")
