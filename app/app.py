@@ -6,6 +6,7 @@ from routes.car import car
 from routes.product import product
 
 
+#registramos nuestros blueprints
 app=Flask(__name__)
 app.register_blueprint(user)
 app.register_blueprint(images)
