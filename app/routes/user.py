@@ -31,6 +31,39 @@ def getUsers():
 
     return res
 
+@user.post("/login")
+def login():
+  if request.method == "POST":
+    new_user = request.json
+    correo = new_user['correo']
+    contrasena = new_user['contrasena']
+
+    cursor = db.database.cursor()
+    cursor.execute(f"SELECT u.id, c.contrasena FROM usuario u, contrasenas c WHERE u.correo = '{correo}' AND u.id = c.id_usuario")
+
+    myresult = cursor.fetchall()
+
+    # Convertir los resultados en un diccionario
+    insertObject = []  # Crear una lista vacía para almacenar los registros convertidos
+    
+    columnNames = [column[0] for column in cursor.description] 
+    for record in myresult:
+        # Crear un diccionario que mapea los nombres de columna a los valores de registro
+        insertObject.append(dict(zip(columnNames, record)))
+
+    # Cerrar conexión
+    cursor.close()
+
+    print(insertObject)
+
+    if check_password_hash(insertObject[0]['contrasena'], contrasena):
+        return jsonify(insertObject[0]['id'])
+    else:
+        res = make_response('No se encontro al usuario', 404)
+        return res
+    
+
+
 
 @user.get('/user/<id>')
 def getUserById(id=id):
