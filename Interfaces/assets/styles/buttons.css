@@ -91,6 +91,12 @@
   background-color: #007BFF;
   color: #FFFFFF;
 }
+.eliminar:hover {
+  background-color: #FF3333;
+}
+.editar:hover {
+  background-color: #0099FF;
+}
 
 /* Botones Página Admin */
 .boton-guardar{
@@ -102,7 +108,7 @@
   cursor: pointer;
   font-size: 14px;
 }
-.boton-enviar:hover {
+.boton-guardar:hover {
   background-color: #0056b3;
 }
 .boton-guardar {

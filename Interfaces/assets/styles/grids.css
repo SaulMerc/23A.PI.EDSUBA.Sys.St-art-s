@@ -440,6 +440,7 @@
 .margB{
   margin-bottom: 10px;
 }
+
 /* Estructura de la página de administrador */
 .gridAdmin {
   display: grid;
@@ -448,7 +449,6 @@
   "aside fromulario formulario formulario" auto
   "aside main main main" auto
   "aside main main main" auto
-  "footer footer footer footer" 100px
 }
 
 /* Grid del aside */
@@ -465,9 +465,4 @@
 /* Grid del main */
 .gridAdmin > .gridM {
   grid-area: main;
-}
-/* Grid del footer */
-.gridAdmin > .gridF {
-  grid-area: footer;
-  background: violet;
 }
