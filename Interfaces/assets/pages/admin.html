@@ -65,9 +65,20 @@
     </aside>
     <nav>
         <ul>
-            <form id="search-form">
-                <input type="text" id="search-input" placeholder="Buscar personas">
-                <input type="submit" value="Guardar">
+            <form>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="telefono">Número Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" required>
+                
+                <label for="email">Correo:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="contraseña">Contraseña:</label>
+                <input type="password" id="contraseña" name="contraseña" required>
+                       
+                <input type="submit" value="Guardar" class="boton-guardar">
             </form>
         </ul>
     </nav>
