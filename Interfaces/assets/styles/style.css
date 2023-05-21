@@ -9,6 +9,7 @@
 @import url(dkMode.css);
 @import url(modal.css);
 @import url(table.css);
+@import url(asideAdmin.css);
 
 * {
     margin: 0;

@@ -1,0 +1,9 @@
+/* Edición de asside */
+.asideAdmin ul {
+    list-style-type: disc; /* Estilo del marcador de lista */
+}
+
+.asideAdmin  li {
+    margin-bottom: 5px; /* Espacio entre elementos de la lista */
+    margin-left: 20px; /* Espacio a la izquierda de la lista */
+}
