@@ -82,7 +82,6 @@ def deleteCar(id):
 def editCar(id):
     update_car = request.get_json()
     vendido = update_car['vendido']
-    global id_user
     if vendido:
         cursor = db.database.cursor()
         sql = "UPDATE carrito SET vendido = %s WHERE id = %s"
@@ -94,6 +93,24 @@ def editCar(id):
     else: resp=make_response('Algo salio mal, revisa los datos...',400)
 
     return resp
+
+@car.put('/sellCar/<string:id_user>/<string:id_car>')
+def sellCar(id_user, id_car):
+    cursor = db.database.cursor()
+    sql = f"UPDATE carrito SET vendido = 'si', fecha_vendido = CURRENT_TIME() WHERE id = {id_car}"
+    cursor.execute(sql)
+    db.database.commit()
+
+    cursor.execute("INSERT INTO `carrito` (`vendido`, `fecha_vendido`) VALUES ('no', CURRENT_TIMESTAMP)")
+    db.database.commit()
+
+    last_insert_id = cursor.lastrowid
+    
+    cursor.execute("INSERT INTO `rel_user_car` (`id_user`, `id_car`) VALUES (%s, %s)", (id_user, last_insert_id))
+    db.database.commit()
+
+    cursor.close()
+    return jsonify({'mensaje':'Carrito vendido'})
  
 
 
