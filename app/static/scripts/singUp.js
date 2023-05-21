@@ -64,7 +64,7 @@ const addUser = async()=> {
         }
       });
       alert("Usuario creado con exito")
-      window.location.href = "../pages/signIn.html";
+    //   window.location.href = "../pages/signIn.html";
       console.log(respuesta)
     } catch (error) {
         console.log(error)
