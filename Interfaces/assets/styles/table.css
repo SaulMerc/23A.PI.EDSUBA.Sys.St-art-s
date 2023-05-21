@@ -1,0 +1,35 @@
+/* Tabla de datos */
+.container{
+    border: solid 1px black;
+}
+
+.container table{
+    color: black;
+    font-size: 15px;
+    table-layout: fixed;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.container thead{
+    background: #93bfb7;
+}
+
+.container th{
+    padding: 20px 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.container td{
+    padding: 15px;
+    border-bottom: solid 1px black;
+}
+
+.container tbody tr{
+    cursor: pointer;
+}
+
+.container tbody tr:hover{
+    background: rgba(136, 135, 135, 0.603);
+}

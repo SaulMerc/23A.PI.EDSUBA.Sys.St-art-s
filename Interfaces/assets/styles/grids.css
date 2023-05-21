@@ -440,3 +440,34 @@
 .margB{
   margin-bottom: 10px;
 }
+/* Estructura de la página de administrador */
+.gridAdmin {
+  display: grid;
+  grid-template:
+  "header header header header" 60px
+  "aside fromulario formulario formulario" auto
+  "aside main main main" auto
+  "aside main main main" auto
+  "footer footer footer footer" 100px
+}
+
+/* Grid del aside */
+.gridAdmin > .gridA {
+  max-width: 28vw;
+  word-break: break-all;
+  grid-area: aside;
+  
+}
+/* Grid del header */
+.gridAdmin > .gridH {
+  grid-area: header;
+}
+/* Grid del main */
+.gridAdmin > .gridM {
+  grid-area: main;
+}
+/* Grid del footer */
+.gridAdmin > .gridF {
+  grid-area: footer;
+  background: violet;
+}
