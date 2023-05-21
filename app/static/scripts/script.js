@@ -12,10 +12,22 @@ toggleBtn.addEventListener('click', toggleSidebar);
 
 const darkModeToggle = document.querySelector('#dark__ModeToggle');
 
-
 darkModeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark__Mode');
+  document.body.classList.toggle('dark__Mode');
+
+  if (document.body.classList.contains('dark__Mode')) {
+    localStorage.setItem('dark-mode', 'true');
+
+  }else{
+    localStorage.setItem('dark-mode', 'false');
+  }
 });
+
+if (localStorage.getItem('dark-mode') === 'true') {
+document.body.classList.add('dark__Mode');
+}else{
+document.body.classList.remove('dark__Mode');
+}
 
 
 
