@@ -10,6 +10,15 @@ body.dark__Mode {
     background: var(--dkMode);
 }
 
+body.dark__Mode .formS button{
+    color: var(--white);
+    background-color: var(--complement);
+}
+
+body.dark__Mode .formS button:hover{
+    color: var(--white);
+    background-color: var(--primary);
+}
 body.dark__Mode button {
     color: var(--white);
 }

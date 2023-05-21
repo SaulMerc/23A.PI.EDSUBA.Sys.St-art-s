@@ -53,3 +53,13 @@ textarea{
     overflow-y: scroll;
     height: 30px;
 }
+
+body.dark__Mode .formS button{
+    color: var(--white);
+    background-color: var(--complement);
+}
+
+body.dark__Mode .formS button:hover{
+    color: var(--white);
+    background-color: var(--primary);
+}
