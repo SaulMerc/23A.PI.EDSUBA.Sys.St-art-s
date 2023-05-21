@@ -101,12 +101,13 @@ def addUser():
     nombre_usuario = new_user['nombre_usuario']
     f_nacimiento = new_user['f_nacimiento']
     numero_tel = new_user['numero_tel']
+    acerca_mi = new_user['acerca_mi']
 
     if nombre and correo and contrasena and nombre_usuario and f_nacimiento and numero_tel:
      try:
         cursor = db.database.cursor()
-        sql = "INSERT INTO usuario (id, nombre, correo, nombre_usuario, f_nacimiento, numero_tel, id_rol) VALUES (NULL, %s, %s, %s, %s, %s, %s)"
-        data = (nombre, correo, nombre_usuario, f_nacimiento, numero_tel, 1)
+        sql = "INSERT INTO usuario (id, nombre, correo, nombre_usuario, f_nacimiento, numero_tel, acerca_mi, id_rol) VALUES (NULL, %s, %s, %s, %s, %s, %s, %s)"
+        data = (nombre, correo, nombre_usuario, f_nacimiento, numero_tel, acerca_mi, 1)
         cursor.execute(sql, data)
         db.database.commit()
         respuesta = data
@@ -151,13 +152,13 @@ def updateUser(id=str(id)):
     nombre_usuario = update_user['nombre_usuario']
     f_nacimiento = update_user['f_nacimiento']
     numero_tel = update_user['numero_tel']
-    
+    acerca_mi = update_user['acerca_mi']
 
     if nombre and correo and nombre_usuario and f_nacimiento and numero_tel and id:
  
         cursor = db.database.cursor()
-        sql = "UPDATE usuario SET nombre = %s, correo = %s, nombre_usuario = %s, f_nacimiento = %s, numero_tel = %s WHERE id = %s"
-        data = (nombre, correo, nombre_usuario, f_nacimiento, numero_tel, id)
+        sql = "UPDATE usuario SET nombre = %s, correo = %s, nombre_usuario = %s, f_nacimiento = %s, numero_tel = %s , acerca_mi = %s WHERE id = %s"
+        data = (nombre, correo, nombre_usuario, f_nacimiento, numero_tel, acerca_mi, id)
         cursor.execute(sql, data)
         db.database.commit()
         resp=make_response(jsonify(data), 200)
