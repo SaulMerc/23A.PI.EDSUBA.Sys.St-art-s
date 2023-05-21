@@ -7,7 +7,7 @@ from routes.product import product
 from flask_cors import CORS
 
 app=Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "http://http://34.208.161.62/"}})
+CORS(app, resources={r"/*": {"origins": "http://34.208.161.62/"}})
 app.register_blueprint(user)
 app.register_blueprint(images)
 app.register_blueprint(comment)
