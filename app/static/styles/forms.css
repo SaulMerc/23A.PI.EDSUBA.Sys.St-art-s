@@ -11,9 +11,9 @@ form.signIN{
     color: crimson;
 }
 .form input, select{
-    width: 350px;
+    max-width: 350px;
     margin-bottom: 10px;
-    padding: 4px;
+    padding: 5px;
 }
 .form input#numInt, input#numExt, input#cdPos{
     width: 80px;
@@ -23,4 +23,33 @@ form.signIN{
 }
 .form input[type=submit]{
     margin-top: 10px;
+    padding: 10px;
+}
+
+
+.formS i{
+    color: crimson;
+}
+.formS input, select, textarea{
+    max-width: 50vw;
+    min-width: 40vw;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.formS button{
+    width: 40vw;
+    padding: 5px;
+}
+.formS .marg0{
+    margin: 0;
+    padding: 0;
+}
+.formS a{
+    color: var(--black);
+}
+
+textarea{
+    resize: none;
+    overflow-y: scroll;
+    height: 30px;
 }

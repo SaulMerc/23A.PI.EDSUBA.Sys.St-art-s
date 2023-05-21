@@ -181,17 +181,46 @@
   }
 }
 /*Tablets*/
-@media only screen and (min-width: 601px) {
+@media only screen and (max-width: 780px) {
+  .gridSign {
+    display: grid;
+    gap: 1px;
+    grid-template:
+      ".   .    " 60px
+      "img img  " auto
+      "form form" auto
+      ".   .    " 100px;
+  }
+  .gridSign > .gridImg {
+    grid-area: img;
+    background: var(--complement);
+  }
   
+  .gridSign > .gridForm {
+    grid-area: form;
+    background: var(--primary);
+  }
+}
+@media only screen and (min-width: 781px){
+  /* Grid para el inicio de sesion */
+.gridSign {
+  display: grid;
+  gap: 1px;
+  grid-template:
+    ".   .   .    .   " 60px
+    "img img form form" auto
+    "img img form form" auto
+    ".   .   .    .   " 100px;
+}
+.gridSign > .gridImg {
+  grid-area: img;
+  background: var(--complement);
 }
 
-/* Media de laptop */
-@media only screen and (min-width: 992px) {
-
+.gridSign > .gridForm {
+  grid-area: form;
+  background: var(--primary);
+}
 }
 
-/* Media para monitores */
-@media only screen and (min-width: 1200px) {
- 
-}
 

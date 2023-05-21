@@ -4,10 +4,10 @@ from routes.images import images
 from routes.comment import comment
 from routes.car import car
 from routes.product import product
-
+from flask_cors import CORS
 
 app=Flask(__name__)
-
+CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:3000"}})
 app.register_blueprint(user)
 app.register_blueprint(images)
 app.register_blueprint(comment)
@@ -21,4 +21,4 @@ def raiz():
     return render_template("index.html")
 
 if __name__=='__main__':
-    app.run(debug=True,port=8000)
+    app.run(debug=True,port=3000)

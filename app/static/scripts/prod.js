@@ -1,6 +1,6 @@
 (function(){
 
-//Funcion del modal para la dirección
+//Funcion del modal para agregar al carrito
 const cl = document.querySelector(".close");
 const modal = document.querySelector(".alert");
 let clic = false;
@@ -26,4 +26,5 @@ let clic = false;
                     modal.classList.add("oculto");
                 });
     });
+
 })();

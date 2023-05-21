@@ -7,10 +7,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/style.css">
     <title>Registro</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
-<body class="gridFormR">
-    <form action="" class="gridF">
-        Registro
+<body class=" gridSign ">
+         <div class="gridImg flexC padd10">
+            <img src="" alt="" class="imgSign">
+         </div>
+    <section class="gridForm flexC cWhite">
+        <form  class="formS padd5">
+            <label for="Nombre">Nombre Completo<i>*</i></label>
+            <input type="text" name="Nombre" id="nCom" placeholder="Nombre..." required><br>
+    
+            <label for="Date">Fecha de nacimiento<i>*</i></label>
+            <input type="date" name="Date" id="date" placeholder="contraseña" required><br>
+    
+            <label for="nTel">Número Telefónico<i>*</i></label>
+            <input type="number" name="nTel" id="nTel" placeholder="111-111-1111" required><br>
+            
+            <label for="NombreUsuario">Nombre de usuario<i>*</i></label>
+            <input type="text" name="NombreUsuario" id="nUser" placeholder="usuario23..." required><br>
+    
+            <label for="acercaDe">Acerca de mí<i>(Opcional)</i></label><br>
+            <textarea name="acercaDe" id="acercaDe" cols="10" rows="1"></textarea><br>
+
+            <label for="Correo">Correo electrónico<i>*</i></label>
+            <input type="email" name="Correo" id="mail" placeholder="ejemplo@gmail.com" required><br>
+    
+            <label for="Pass">Contraseña<i>*</i></label>
+            <input type="password" name="Pass" id="pass" placeholder="contraseña" required><br>
+    
+            <label for="Pass">Repetir contraseña<i>*</i></label>
+            <input type="password" name="PassR" id="passR" placeholder="contraseña" required><br>
+                
+            <div class="flexCL">
+                <label for="Pass">Acepto los <a href="" class="cBase">términos y condiciones</a> <i>*</i> 
+                    <input type="checkbox" name="PassR" id="term">
+                </label><br>
+            </div>
+            
+            <div class="flexC">
+                <button type="submit" id="reg">Registrarse</button>
+            </div>
     </form>
+    </section>
+    <script src="../scripts/singUp.js"></script>
 </body>
 </html>

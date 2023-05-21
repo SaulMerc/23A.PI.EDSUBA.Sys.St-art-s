@@ -46,3 +46,8 @@
   border: 1px solid var(--base);
   aspect-ratio: auto;
 }
+.imgSign{
+  content: url("../icons/stars\ alizado\ letras\ IN\ WHITE.png");
+  max-width: 30vw;
+  aspect-ratio: auto;
+}

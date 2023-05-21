@@ -185,36 +185,6 @@
   
 }
 
-/* Grid para el inicio de sesion */
-.gridForm {
-  display: grid;
-  gap: 3px;
-  grid-template:
-    ". .    .    .    ." 60px
-    ". . form . ." auto
-    ". . form . ." auto
-    ". .    .    .    ." 100px/auto auto 80vw auto auto;
-}
-.gridForm > .gridF {
-  grid-area: form;
-  background: var(--fondo);
-}
-
-/* Grid para Registro */
-.gridFormR {
-  display: grid;
-  gap: 3px;
-  grid-template:
-    ".    .    .   " 60px
-    "form form form" auto
-    "form form form" auto
-    ".    .    ." 60px;
-}
-.gridFormR > .gridF {
-  grid-area: form;
-  background: yellow;
-}
-
 /* Grid para tajetas */
 .grid__shop {
   display: grid;
