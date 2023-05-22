@@ -32,7 +32,7 @@ form.signIN{
 }
 .formS input, select, textarea{
     max-width: 50vw;
-    min-width: 40vw;
+    min-width: 20vw;
     margin-bottom: 10px;
     padding: 5px;
 }
@@ -54,12 +54,3 @@ textarea{
     height: 30px;
 }
 
-body.dark__Mode .formS button{
-    color: var(--white);
-    background-color: var(--complement);
-}
-
-body.dark__Mode .formS button:hover{
-    color: var(--white);
-    background-color: var(--primary);
-}

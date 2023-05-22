@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Editar Producto</title>
 </head>
 
@@ -36,10 +37,8 @@
         </nav>
         <div class="sidebar bcCom">
             <h2 class="cWhite">Categorias</h2><br>
-            <ul>
-                <li><a href="search.html">Opción 1</a></li>
-                <li><a href="search.html">Opción 2</a></li>
-                <li><a href="search.html">Opción 3</a></li>
+            <ul id="cats">
+                
             </ul><br>
             <h2 class="cWhite">Modo oscuro</h2>
             <label class="switch">
@@ -49,9 +48,9 @@
         </div>
     </header>
     <main class="gridM iFlex">
-        <form class="form">
+        <form class="form" id="productForm" method="POST" action="http://127.0.0.1:3000/api/addProduct/" enctype="multipart/form-data">
             <div class="gridSProd">
-                <div class="gridCat flexCL padd20 img__cardG">
+                <div class="gridCat flexCL img__cardG">
                     <label for="Cat">Categoria<i>*</i></label>
                     <select name="Cat" id="cat" required>
                         <option value="" disabled >Elige una opción</option>
@@ -59,10 +58,10 @@
                 </div>
 
                 <div class="gridImg  flexC padd10 ">
-                    <form method="post" action="localhost:3000/upload/2" enctype="multipart/form-data">
-                    <label for="FotoProd">Foto del Producto<i>*</i></label>
-                    <input type="file" name="FotoProd" id="pic" required><br>
-                </form>
+                    
+                    <label for="fil">Foto del Producto<i>*</i></label>
+                    <input type="file" name="fil" id="pic" required><br>
+                
                 </div>
                 <div class="gridTitl flexC padd20">
                     <label for="TObra">Titulo de la obra<i>*</i></label>
@@ -89,19 +88,22 @@
                     <h3>Comentarios</h3>
                 </div>
                 <div class="gridInsCom padd20 flexCL">
-                    <input type="text" value="" class="btnCart padd10 margR5" placeholder="Comentario ..." disabled>
-                    <input type="button" value="Comentar" class="btnCom" disabled>
+                    
                 </div>
                 <div class="gridCom flexCL padd20">
-                    <h3>-Esta es una visualización de como se vería acomodada la información de tu obre tu obra-</h3>
+                    <h3>-Esta es una visualización de como se vería acomodada la información de tu obra-</h3>
                 </div>
             </div>
         </form>
     </main>
-    <footer class="gridF">
-        <div></div>
+    <footer class="gridF flexC bcCom">
+        <section >
+            <img src="" alt="" class="imgF">
+        </section>
     </footer>
     <script src="../scripts/script.js"></script>
+    <script src="../scripts/addProduct.js"></script>
+    <script src="../scripts/scriptalt.js"></script>
 </body>
 
 </html>

@@ -51,3 +51,9 @@
   max-width: 30vw;
   aspect-ratio: auto;
 }
+.imgF{
+  content: url(../icons/stars_alizado_letras_IN_WHITE.png);
+  aspect-ratio: auto;
+  width: 15vw;
+  height: 3vw;
+}

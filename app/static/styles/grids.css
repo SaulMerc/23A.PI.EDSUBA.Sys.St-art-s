@@ -111,8 +111,6 @@
   grid-area: main;
 }
 .gridMain > .gridF {
-  
-  
   grid-area: footer;
 }
 
@@ -201,7 +199,6 @@
   grid-area: image;
   margin: auto;
   vertical-align: top;
-  
 }
 
 .grid__author {
@@ -411,7 +408,7 @@
   margin-bottom: 10px;
 }
 .margR30{
-  margin-right: 30px;
+  margin-right: 5px;
 }
 .overflow{
   overflow-y: scroll;

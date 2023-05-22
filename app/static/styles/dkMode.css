@@ -57,6 +57,9 @@ body.dark__Mode .sidebar a{
 body.dark__Mode .navP{
     background: var(--base);
 }
+body.dark__Mode .gridF{
+    background: var(--base);
+}
 body.dark__Mode .searchBtn{
     background: var(--white);
     color: var(--black);
@@ -73,6 +76,16 @@ body.dark__Mode .checkout-method {
     background: var(--dkMode);
     color: var(--white);
     box-shadow: 0px 0px 10px rgba(194, 194, 194, 0.082);
+}
+
+body.dark__Mode .formS button{
+    color: var(--white);
+    background-color: var(--complement);
+}
+
+body.dark__Mode .formS button:hover{
+    color: var(--white);
+    background-color: var(--primary);
 }
 
 body.dark__Mode .checkout-information {

@@ -81,19 +81,18 @@ def getProductByUserId(id=id):
     # ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 # Ruta para guardar usuariosen la base de datos
-@product.post('/addProduct')
+@product.post('/addProduct/')
 def addProduct():
-    new_product = request.get_json()
-    id_user = new_product['id_user']
-    titulo = new_product['titulo']
-    descripcion = new_product['descripcion']
-    existencia = new_product['existencia']
-    precio = new_product['precio']
-    categoria = new_product['categoria']
-    imagen = new_product['imagen']
+    id_user = request.form.get('id_user')
+    titulo = request.form.get('titulo')
+    descripcion = request.form.get('descripcion')
+    existencia = request.form.get('existencia')
+    precio = request.form.get('precio')
+    categoria = request.form.get('categoria')
+    uploaded_file = request.files['file']
 
 
-    if id_user and titulo and descripcion and existencia and precio and categoria and imagen:
+    if id_user and titulo and descripcion and existencia and precio and categoria:
      try:
         cursor = db.database.cursor()
         sql = "INSERT INTO productos (id_user, titulo, descripcion, existencia, precio, categoria) VALUES (%s, %s, %s, %s, %s, %s)"
@@ -105,11 +104,18 @@ def addProduct():
         last_insert_id = cursor.lastrowid
 
         # Insertar en otra tabla utilizando el último ID
+        file_path = 'C:\\Users\\waldi\\Desktop\\PruebasSUBIDAIMAGENEDS\\' + uploaded_file.filename
+        uploaded_file.save(file_path)
+    
         cursor = db.database.cursor()
-        sql = "INSERT INTO `imagenes` (`id_prod`, `imagen`) VALUES (%s, %s)"
-        data = (last_insert_id, imagen)
-        cursor.execute(sql, data)
+                                                                        
+        query = f"INSERT INTO `imagenes` (`id`, `id_prod`, `imagen`) VALUES (NULL, {last_insert_id}, {file_path})"
+        cursor.execute(query)
+ 
         db.database.commit()
+        cursor.close()
+
+        
 
         return jsonify({'mensaje':'Producto registrado con exito'})
      except Exception as ex:
