@@ -5,5 +5,5 @@ database = mysql.connector.connect(
     host = "localhost",
     user = "root",
     password = "root",
-    database = "db_starts_pruebas"
+    database = "db_starts"
 )
