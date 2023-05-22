@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Product</title>
 </head>
 
@@ -51,7 +52,7 @@
         <section class="flexC"><div class="bcPrim oculto alert flexC" id="alerts">  </div> </section>
             <div class="gridSProd">
                 <div class="gridCat flexCL padd20 img__cardG">
-                    <h4><a href="search.html">Categoría</a> </h4>
+                    <h4><a href="../../templates/search.html">Categoría</a> </h4>
                 </div>
 
                 <div class="gridImg  flexC padd10 ">
@@ -78,11 +79,13 @@
                     <h3>Comentarios</h3>
                 </div>
                 <div class="gridInsCom padd20 flexCL">
-                    <input type="text" value="" class="btnCart padd10 margR5" placeholder="Comentario ...">
-                    <input type="button" value="Comentar" class="btnCom">
+                    
+                        <input type="text" value="" class="btnCart padd10 margR5" placeholder="Comentario ..." id="comentario">
+                        <input type="submit" value="Comentar" class="btnCom eliminar" id="com">
+                    
                 </div>
-                <div class="gridCom flexCL padd20">
-                    <h3>-Aqui se insertan todos los comentarios-</h3>
+                <div class="gridCom flexCL padd20 iFlex" id="comments">
+                    
                 </div>
             </div>
     </main>
@@ -94,6 +97,7 @@
     <script src="../scripts/script.js"></script>
     <script src="../scripts/prod.js"></script>
     <script src="../scripts/scriptalt.js"></script>
+    <script src="../scripts/comments.js"></script>
 </body>
 
 </html>

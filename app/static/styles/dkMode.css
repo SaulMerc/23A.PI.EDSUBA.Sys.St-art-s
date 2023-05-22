@@ -88,11 +88,20 @@ body.dark__Mode .formS button:hover{
     background-color: var(--primary);
 }
 
+body.dark__Mode .eliminar {
+    background-color: var(--primary);
+    color: #FFFFFF;
+  }
+
 body.dark__Mode .checkout-information {
     background: var(--dkMode);
     color: var(--white);
     box-shadow: 0px 0px 10px rgba(194, 194, 194, 0.082);
 }
+
+body.dark__Mode .eliminar:hover {
+    background: var(--base);
+  }
 
 body.dark__Mode .input-group {
     background: var(--dkMode);

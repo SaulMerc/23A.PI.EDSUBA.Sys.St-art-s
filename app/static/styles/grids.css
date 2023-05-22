@@ -131,7 +131,6 @@
 }
 .gridProd > .gridF {
   grid-area: footer;
-  background: tomato;
 }
 
 /* Estructura temporal de las demás paginas */
@@ -152,11 +151,9 @@
 }
 .gridS > .gridF {
   grid-area: foot;
-  background: violet;
 }
 .gridS > .gridA {
   grid-area: aside;
-  background: turquoise;
 }
 
 /* Grid para el carrito */
