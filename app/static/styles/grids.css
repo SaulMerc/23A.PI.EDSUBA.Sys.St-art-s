@@ -410,3 +410,37 @@
 .margB{
   margin-bottom: 10px;
 }
+.margR30{
+  margin-right: 30px;
+}
+.overflow{
+  overflow-y: scroll;
+}
+
+/* Estructura de la página de administrador */
+.gridAdmin {
+  display: grid;
+  grid-template:
+  "header header header header" 56px
+  "aside fromulario formulario formulario" auto
+  "aside main main main"auto/ 15vw auto auto auto;
+  
+}
+
+/* Grid del aside */
+.gridAdmin > .gridA {
+  word-break: break-all;
+  grid-area: aside;
+
+}
+/* Grid del header */
+.gridAdmin > .gridH {
+  grid-area: header;
+}
+/* Grid del main */
+.gridAdmin > .gridM {
+  grid-area: main;
+}
+.gridAdmin> .gridF{
+  grid-area: fromulario;
+}

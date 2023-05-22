@@ -8,6 +8,8 @@
 @import url(buttons.css);
 @import url(dkMode.css);
 @import url(modal.css);
+@import url(asideAdmin.css);
+@import url(table.css);
 
 * {
     margin: 0;

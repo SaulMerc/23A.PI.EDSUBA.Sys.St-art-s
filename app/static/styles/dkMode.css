@@ -155,3 +155,7 @@ body.dark__Mode  .nav li:hover a:hover{
   body.dark__Mode .nav ul {
     background:var(--base);
   }
+
+body.dark__Mode button#clS{
+    color: #fff;
+}

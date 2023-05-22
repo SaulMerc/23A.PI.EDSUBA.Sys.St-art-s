@@ -1,25 +1,20 @@
-//date , nTel,   nUser,  acercaDe, mail, pass, passR, reg, term
+//cat pic obr desc pri ext        addProd
+ 
 
-const validarContraseña = (contrasena)=>{
-    
-    if(!contrasena.lenght > 7){
-        return false;
-    }
-    
-    if (!/\d/.test(contrasena)) {
-        return false;
-    }
+const cargarCategorias = () => {
+    var categorias = document.querySelector("#cat")
 
-    if (!/[A-Z]/.test(contrasena)) {
-        return false;
-    }
 
-    return true;
-      
+
 }
 
-var redi  = true;
-const addUser = async()=> {
+
+
+
+
+
+
+const addProd = async()=> {
     try {
         var nombre = document.getElementById("nCom").value,
         fechaNacimiento = document.getElementById("date").value,
@@ -95,5 +90,5 @@ const addUser = async()=> {
         var submitFormulario = document.querySelector("#reg");
         submitFormulario.addEventListener('click',(event) => {
             event.preventDefault(); 
-            addUser();
+            addProd();
           });

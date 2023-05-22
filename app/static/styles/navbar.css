@@ -3,8 +3,13 @@ button.unset{
   all: unset;
 }
 
+button#clS{
+  all: unset;color: #000;
+}
+
 button.unset:hover{
   cursor: pointer;
+  
 }
 
 nav a{

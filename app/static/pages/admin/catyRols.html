@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../styles/style.css">
+    <title>Categorias y roles</title>
+    
+</head>
+<body class="gridAdmin">
+    <header class="gridH ">
+        <nav class="navP bcCom cComp">
+            <div class="menu flexC">
+                <button type="button" class="unset">
+                    <img src="" type="image/svg+xml" class="imgM" alt="">
+                </button>
+            </div>
+
+            <div class="logo flexC">
+                <a href="../../index.html"><img class="imageLogo" alt=""></a>
+            </div>
+            <div class="search flexC">
+                <input type="text" class="navB" placeholder="Pinturas de..." onkeypress="buscar">
+                <button type="button" class="searchBtn" onclick="">
+                    Buscar
+                </button>
+            </div>
+            <div class="login flexC">
+                <a href="signIn.html">Iniciar sesión</a>&nbsp;&nbsp;<a href="signUp.html">
+                    Registrarse</a>
+            </div>
+            <div class="cart flexC">
+                <a href="cart.html"><img src="" alt="" class="imageCart"></a>
+            </div>
+        </nav>
+        <div class="sidebar bcCom">
+            <h2 class="cWhite">Categorias</h2><br>
+            <ul>
+                <li><a href="search.html">Opción 1</a></li>
+                <li><a href="search.html">Opción 2</a></li>
+                <li><a href="search.html">Opción 3</a></li>
+            </ul><br>
+            <h2 class="cWhite">Modo oscuro</h2>
+            <label class="switch">
+                <input type="checkbox" id="dark__ModeToggle">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </header>
+    <aside class="gridA bcWhite">
+        <div>
+            <h1>Información</h1>
+            <ul class="asideAdmin">
+                <li><a href="../admin.html" class="unset">Usuarios</a></li>
+                <li><a href="productos.html" class="unset">Productos</a></li>
+                <li><a href="com.html" class="unset">Comentarios</a></li>
+                <li><a href="car.html" class="unset">Carrito</a></li>
+                <li><a href="catyRols.html" class="unset">Categorias y roles</a></li>
+            </ul>
+        </div>
+    </aside>
+    <!-- ID categoria -->
+    <nav class="flexC">
+        <ul class="padd20 iFlex" >
+            <form class="form padd10">
+                <label for="Id">ID:</label>
+                <input type="text" id="Id" name="Id"disabled>
+
+                <label for="rol">Rol:</label>
+                <input type="text" id="rol" name="rol" required>
+                
+                <label for="desc">Descripcion:</label>
+                <input type="desc" id="desc" name="desc" required>
+                       
+                <input type="submit" value="Guardar" class="boton-guardar" id="nuevoRol">
+            </form>
+            <form class="form padd10" >
+                <label for="Id">ID:</label>
+                <input type="text" id="Id" name="Id"disabled>
+
+                <label for="cat">Categoria:</label>
+                <input type="text" id="categoria" name="cat" required>
+                       
+                <input type="submit" value="Guardar" id="formCat" class="boton-guardar">
+            </form>
+        </ul>
+    </nav>
+    <main class="gridM iFlex">
+        <div class="container iFlex">
+            <table id="tablaRol" class="padd20 margR30">
+                <thead class="bcPrim">
+                    <th>ID</th>
+                    <th>Rol</th>
+                    <th>Descripcion</th>
+                </thead>
+                <tbody>
+                    <tr></tr>
+                
+                </tbody>
+            </table>
+            <table id="tablaCategoria" class="padd20 margR30">
+                <thead class="bcPrim">
+                    <th>ID</th>
+                    <th>Categoria</th>
+                </thead>
+                <tbody>
+                    <tr></tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script src="../../scripts/script.js"></script>
+    <script src="../../scripts/admincatyrol.js"></script>
+</body>
+</html>

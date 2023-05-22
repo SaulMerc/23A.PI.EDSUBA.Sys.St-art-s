@@ -31,10 +31,9 @@ def getUsers():
 
     return res
 
-@user.post("/login")
+@user.post("/login/")
 def login():
-  if request.method == "POST":
-    new_user = request.json
+    new_user = request.get_json()
     correo = new_user['correo']
     contrasena = new_user['contrasena']
 
@@ -54,10 +53,15 @@ def login():
     # Cerrar conexión
     cursor.close()
 
-    print(insertObject)
+    if insertObject:
 
-    if check_password_hash(insertObject[0]['contrasena'], contrasena):
-        return jsonify(insertObject[0]['id'])
+        print(insertObject)
+
+        if check_password_hash(insertObject[0]['contrasena'], contrasena):
+            return jsonify(insertObject[0]['id'])
+        else:
+            res = make_response('La contraseña ingresada es incorrecta', 404)
+            return res
     else:
         res = make_response('No se encontro al usuario', 404)
         return res

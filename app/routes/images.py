@@ -4,43 +4,21 @@ import database as db
 
 images = Blueprint('images', __name__,url_prefix='/api')
 
-@images.route('/upload/', methods=['POST'])
-def upload_file():
+@images.route('/upload/<id>', methods=['POST'])
+def upload_file(id):
     uploaded_file = request.files['file']
-    file_path = '/home/waldo/fotos-perfil/' + uploaded_file.filename
+    file_path = 'C:\\Users\\waldi\\Desktop\\PruebasSUBIDAIMAGENEDS\\' + uploaded_file.filename
     uploaded_file.save(file_path)
     
-    
     cursor = db.database.cursor()
-    
-   
-    query = "INSERT INTO `fotos_perfil` (`id`, `id_user`, `imagen`) VALUES (NULL, '2', %s)"
-    values = (file_path,)
-    cursor.execute(query, values)
-
-    
+                                                                        
+    query = f"INSERT INTO `fotos_perfil` (`id`, `id_user`, `imagen`) VALUES (NULL, {id}, {file_path})"
+    cursor.execute(query)
+ 
     db.database.commit()
     cursor.close()
     
     return 'Archivo subido y ruta guardada en la base de datos.'
-
-
-
-# <!DOCTYPE html>
-# <html>
-# <head>
-#     <title>Subir archivo</title>
-# </head>
-# <body>
-#     <form method="post" action="http://localhost:3000/upload/" enctype="multipart/form-data">
-#         <input type="file" name="file">
-#         <button type="submit">Subir archivo</button>
-#     </form>
-    
- 
-# </body>
-# </html>
-
 
 
 @images.route('/images/<user_id>', methods=['GET'])
@@ -69,3 +47,20 @@ def get_user_images(user_id):
     }
     
     return jsonify(response)
+
+
+@images.put('/editImage/<string:id>')
+def editImage(id):
+    update_image = request.get_json()
+    imagen = update_image['imagen']
+    if imagen:
+        cursor = db.database.cursor()
+        sql = "UPDATE fotos_perfil SET imagen = %s WHERE id = %s"
+        data = (imagen, id)
+        cursor.execute(sql, data)
+        db.database.commit()
+        resp=make_response(jsonify(data), 200)
+    
+    else: resp=make_response('Algo salio mal, revisa los datos...',400)
+
+    return resp
