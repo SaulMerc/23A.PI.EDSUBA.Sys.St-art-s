@@ -4,6 +4,7 @@ from routes.images import images
 from routes.comment import comment
 from routes.car import car
 from routes.product import product
+from routes.prueba import prueba
 
 
 #registramos nuestros blueprints
@@ -13,6 +14,7 @@ app.register_blueprint(images)
 app.register_blueprint(comment)
 app.register_blueprint(car)
 app.register_blueprint(product)
+app.register_blueprint(prueba)
 
 
 

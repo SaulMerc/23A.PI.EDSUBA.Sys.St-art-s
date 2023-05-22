@@ -80,8 +80,12 @@ def getProductByUserId(id=id):
    
     # ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-# Ruta para guardar usuariosen la base de datos
-@product.post('/addProduct')
+
+# Ruta para guardar usuarios en la base de datos   se agrega aqui no?, como? , en la url?  osea en este archivo
+
+# es que, aqui hacemos la inserción en la tabla de producto y la de imagen,   esto fue lo que copie para la otra inserción
+# si, adaptar lo que tenemos aquí  en la carpeta de front
+@product.post('/addProduct') 
 def addProduct():
     new_product = request.get_json()
     id_user = new_product['id_user']
