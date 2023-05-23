@@ -6,6 +6,7 @@ from routes.car import car
 from routes.product import product
 from routes.category import category
 from routes.rol import rol
+from routes.prueba import prueba
 from flask_cors import CORS
 import mysql.connector
 from uuid import uuid4
@@ -22,6 +23,8 @@ app.register_blueprint(car)
 app.register_blueprint(product)
 app.register_blueprint(category)
 app.register_blueprint(rol)
+app.register_blueprint(prueba)
+
 
 
 @app.route("/")
